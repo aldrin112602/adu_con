@@ -888,7 +888,7 @@ require_once('config.php')
 
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" >11. Economic Indicators</label> <br>
+                    <label class="form-label fw-bold">11. Economic Indicators</label> <br>
                     <label class="form-label fw-bold" for="monthly_income">2.1 Combined monthly income of the family members:</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="monthly_income" id="income_below_1000" value="Below 1000">
@@ -978,13 +978,13 @@ require_once('config.php')
                     <div class="form-group mt-4">
                         <label class="form-label fw-bold" for="expenditure_percentage">14.A. Percentage of expenditure:</label>
                         <input type="text" class="form-control" id="expenditure_percentage" name="expenditure_percentage">
-                
+
                     </div>
 
                     <div class="form-group mt-4">
                         <label class="form-label fw-bold" for="expenditure_chart">14.B. Chart:</label>
                         <input type="text" class="form-control" id="expenditure_chart" name="expenditure_chart">
-                
+
                     </div>
 
                 </div>
@@ -1037,17 +1037,17 @@ require_once('config.php')
                 </div>
 
                 <div class="form-group mt-4">
-      <label class="form-label fw-bold" for="health_care_facilities">16. Describe the health care facilities and health services available in the community:</label>
-      <textarea class="form-control" id="health_care_facilities" name="health_care_facilities"></textarea>
-    </div>
-    
-    <div class="form-group mt-4">
-      <label class="form-label fw-bold" for="distance_to_facility">17. Distance of the house to the nearest health care facility:</label>
-      <input type="text" class="form-control" id="distance_to_facility" name="distance_to_facility">
-    </div>
+                    <label class="form-label fw-bold" for="health_care_facilities">16. Describe the health care facilities and health services available in the community:</label>
+                    <textarea class="form-control" id="health_care_facilities" name="health_care_facilities"></textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="distance_to_facility">17. Distance of the house to the nearest health care facility:</label>
+                    <input type="text" class="form-control" id="distance_to_facility" name="distance_to_facility">
+                </div>
 
 
-    
+
 
 
 
