@@ -11,6 +11,7 @@ require_once('config.php')
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -57,46 +58,46 @@ require_once('config.php')
             </div>
         </div>
         <div class="p-5 col" style="height: 100vh; overflow-y: auto;">
-            <form action method="post" class="container">
+            <form action method="post" class="container needs-validation" novalidate>
                 <h2 class="text-center mb-4 fw-bold">FAMILY HEALTH ASSESSMENT FORM</h2>
 
                 <div class="form-group row mt-4">
                     <div class="col-md-4">
                         <label class="form-label fw-bold" for="familySurname">Family Surname:</label>
-                        <input required type="text" class="form-control" id="familySurname" placeholder="Enter Family Surname">
+                        <input type="text" class="form-control" required id="familySurname" placeholder="Enter Family Surname">
                     </div>
                     <div class="col-md-4">
                         <label class="form-label fw-bold" for="houseNumber">House #:</label>
-                        <input required type="text" class="form-control" id="houseNumber" placeholder="Enter House Number">
+                        <input type="text" class="form-control" required id="houseNumber" placeholder="Enter House Number">
                     </div>
                     <div class="col-md-4">
                         <label class="form-label fw-bold" for="purokBarangay">Purok/Barangay:</label>
-                        <input required type="text" class="form-control" id="purokBarangay" placeholder="Enter Purok/Barangay">
+                        <input type="text" class="form-control" required id="purokBarangay" placeholder="Enter Purok/Barangay">
                     </div>
                 </div>
                 <div class="form-group row mt-4">
                     <div class="col-md-6">
                         <label class="form-label fw-bold" for="religion">Religion:</label>
-                        <input required type="text" class="form-control" id="religion" placeholder="Enter Religion">
+                        <input type="text" class="form-control" required id="religion" placeholder="Enter Religion">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label fw-bold" for="placeOfOrigin">Place of Origin:</label>
-                        <input required type="text" class="form-control" id="placeOfOrigin" placeholder="Enter Place of Origin">
+                        <input type="text" class="form-control" required id="placeOfOrigin" placeholder="Enter Place of Origin">
                     </div>
                 </div>
                 <div class="form-group row mt-4">
                     <div class="col-md-6">
                         <label class="form-label fw-bold" for="lengthOfResidency">Length of Residency:</label>
-                        <div class="input required-group">
-                            <input required type="number" class="form-control" id="lengthOfResidency" placeholder="Enter Length">
-                            <div class="input required-group-append">
-                                <span class="input required-group-text">mos./years</span>
+                        <div class="input-group">
+                            <input type="number" class="form-control" required id="lengthOfResidency" placeholder="Enter Length">
+                            <div class="input-group-append">
+                                <span class="input-group-text">mos./years</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label fw-bold" for="numberOfFamilyMembers">Number of family members:</label>
-                        <input required type="number" class="form-control" id="numberOfFamilyMembers" placeholder="Enter Number of Family Members">
+                        <input type="number" class="form-control" required id="numberOfFamilyMembers" placeholder="Enter Number of Family Members">
                     </div>
                 </div>
                 <h5 class="mt-4 fw-bold">A. FAMILY DATA</h5>
@@ -119,14 +120,14 @@ require_once('config.php')
                         for ($i = 0; $i < 10; $i++) {
                         ?>
                             <tr>
-                                <td><input name="names[]" type="text" class="form-control"></td>
-                                <td><input name="dateOfBirth[]" type="date" class="form-control"></td>
-                                <td><input name="age[]" type="number" class="form-control"></td>
-                                <td><input name="sex[]" type="text" class="form-control"></td>
-                                <td><input name="civilStatus[]" type="text" class="form-control"></td>
-                                <td><input name="educationalAttainment[]" type="text" class="form-control"></td>
-                                <td><input name="occupation[]" type="text" class="form-control"></td>
-                                <td><input name="income[]" type="number" class="form-control"></td>
+                                <td><input <?= $i == 0 ? 'required' : null ?> name="names[]" type="text" class="form-control"></td>
+                                <td><input <?= $i == 0 ? 'required' : null ?> name="dateOfBirth[]" type="date" class="form-control"></td>
+                                <td><input <?= $i == 0 ? 'required' : null ?> name="age[]" type="number" class="form-control"></td>
+                                <td><input <?= $i == 0 ? 'required' : null ?> name="sex[]" type="text" class="form-control"></td>
+                                <td><input <?= $i == 0 ? 'required' : null ?> name="civilStatus[]" type="text" class="form-control"></td>
+                                <td><input <?= $i == 0 ? 'required' : null ?> name="educationalAttainment[]" type="text" class="form-control"></td>
+                                <td><input <?= $i == 0 ? 'required' : null ?> name="occupation[]" type="text" class="form-control"></td>
+                                <td><input <?= $i == 0 ? 'required' : null ?> name="income[]" type="number" class="form-control"></td>
                             </tr>
                         <?php
                         }
@@ -229,19 +230,19 @@ require_once('config.php')
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">2.4 Dominant in decision making</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="decisionMaking" id="mother">
+                        <input class="form-check-input" type="radio" required name="decisionMaking" id="mother">
                         <label class="form-check-label" for="mother">Mother</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="decisionMaking" id="father">
+                        <input class="form-check-input" type="radio" required name="decisionMaking" id="father">
                         <label class="form-check-label" for="father">Father</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="decisionMaking" id="both">
+                        <input class="form-check-input" type="radio" required name="decisionMaking" id="both">
                         <label class="form-check-label" for="both">Both</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="decisionMaking" id="others">
+                        <input class="form-check-input" type="radio" required name="decisionMaking" id="others">
                         <label class="form-check-label" for="others">Others</label>
                         <input type="text" class="form-control" placeholder="Specify others">
                     </div>
@@ -249,33 +250,35 @@ require_once('config.php')
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="howDecisionsAreMade">2.5 How decisions are made</label>
-                    <textarea class="form-control" id="howDecisionsAreMade" rows="3"></textarea>
+                    <textarea class="form-control" required id="howDecisionsAreMade" rows="3"></textarea>
                 </div>
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">2.6 General Family Relationships/Dynamics</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="familyRelationships" id="highlyFavorable">
+                        <input class="form-check-input" type="radio" required name="familyRelationships" id="highlyFavorable">
                         <label class="form-check-label" for="highlyFavorable">Highly Favorable</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="familyRelationships" id="moderatelyFavorable">
+                        <input class="form-check-input" type="radio" required name="familyRelationships" id="moderatelyFavorable">
                         <label class="form-check-label" for="moderatelyFavorable">Moderately Favorable</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="familyRelationships" id="unfavorable">
+                        <input class="form-check-input" type="radio" required name="familyRelationships" id="unfavorable">
                         <label class="form-check-label" for="unfavorable">Unfavorable</label>
                     </div>
-                    <input type="text" class="form-control" placeholder="Remarks: (Describe briefly)">
+                    <input type="text" class="form-control" required placeholder="Remarks: (Describe briefly)">
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="significantOthers">2.7 Significant others (Indicate roles they play in the family's life)</label>
-                    <textarea class="form-control" id="significantOthers" rows="3"></textarea>
+                    <label class="form-label fw-bold" for="significantOthers">2.7 Significant others (Indicate roles
+                        they play in the family's life)</label>
+                    <textarea class="form-control" required id="significantOthers" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="relationshipToLargerCommunity">2.8 Relationship of the family to the larger Community (Describe the nature and extent of participation)</label>
-                    <textarea class="form-control" id="relationshipToLargerCommunity" rows="3"></textarea>
+                    <label class="form-label fw-bold" for="relationshipToLargerCommunity">2.8 Relationship of the family
+                        to the larger Community (Describe the nature and extent of participation)</label>
+                    <textarea class="form-control" required id="relationshipToLargerCommunity" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
@@ -301,50 +304,51 @@ require_once('config.php')
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">2.8.2 Extent of Participation</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="participationExtent" id="always">
+                        <input class="form-check-input" type="radio" required name="participationExtent" id="always">
                         <label class="form-check-label" for="always">Always</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="participationExtent" id="mostOfTheTime">
+                        <input class="form-check-input" type="radio" required name="participationExtent" id="mostOfTheTime">
                         <label class="form-check-label" for="mostOfTheTime">Most of the Time</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="participationExtent" id="sometimes">
+                        <input class="form-check-input" type="radio" required name="participationExtent" id="sometimes">
                         <label class="form-check-label" for="sometimes">Sometimes</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="participationExtent" id="seldom">
+                        <input class="form-check-input" type="radio" required name="participationExtent" id="seldom">
                         <label class="form-check-label" for="seldom">Seldom</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="participationExtent" id="never">
+                        <input class="form-check-input" type="radio" required name="participationExtent" id="never">
                         <label class="form-check-label" for="never">Never</label>
                     </div>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="bondingOfFamilyMembers">2.9 Describe the bonding of the family members</label>
-                    <textarea class="form-control" id="bondingOfFamilyMembers" rows="3"></textarea>
+                    <label class="form-label fw-bold" for="bondingOfFamilyMembers">2.9 Describe the bonding of the
+                        family members</label>
+                    <textarea class="form-control" required id="bondingOfFamilyMembers" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="howMembersCommunicate">2.10 How members communicate</label>
-                    <textarea class="form-control" id="howMembersCommunicate" rows="3"></textarea>
+                    <textarea class="form-control" required id="howMembersCommunicate" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="howProblemsAreSolved">2.11 How problems are solved</label>
-                    <textarea class="form-control" id="howProblemsAreSolved" rows="3"></textarea>
+                    <textarea class="form-control" required id="howProblemsAreSolved" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="howConflictIsHandled">2.12 How conflict is handled</label>
-                    <textarea class="form-control" id="howConflictIsHandled" rows="3"></textarea>
+                    <textarea class="form-control" required id="howConflictIsHandled" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="divisionOfLabor">2.13 Division of labor</label>
-                    <textarea class="form-control" id="divisionOfLabor" rows="3"></textarea>
+                    <textarea class="form-control" required id="divisionOfLabor" rows="3"></textarea>
                 </div>
 
 
@@ -354,19 +358,19 @@ require_once('config.php')
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">3.1 Construction Materials used</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="constructionMaterials" id="strong">
+                        <input class="form-check-input" type="radio" required name="constructionMaterials" id="strong">
                         <label class="form-check-label" for="strong">Strong</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="constructionMaterials" id="light">
+                        <input class="form-check-input" type="radio" required name="constructionMaterials" id="light">
                         <label class="form-check-label" for="light">Light</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="constructionMaterials" id="mixed">
+                        <input class="form-check-input" type="radio" required name="constructionMaterials" id="mixed">
                         <label class="form-check-label" for="mixed">Mixed</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="constructionMaterials" id="makeshift">
+                        <input class="form-check-input" type="radio" required name="constructionMaterials" id="makeshift">
                         <label class="form-check-label" for="makeshift">Makeshift</label>
                     </div>
                 </div>
@@ -374,15 +378,15 @@ require_once('config.php')
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">3.2 Home ownership</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="homeOwnership" id="owned">
+                        <input class="form-check-input" type="radio" required name="homeOwnership" id="owned">
                         <label class="form-check-label" for="owned">Owned</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="homeOwnership" id="rent">
+                        <input class="form-check-input" type="radio" required name="homeOwnership" id="rent">
                         <label class="form-check-label" for="rent">Rent</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="homeOwnership" id="rentFree">
+                        <input class="form-check-input" type="radio" required name="homeOwnership" id="rentFree">
                         <label class="form-check-label" for="rentFree">Rent free</label>
                     </div>
                 </div>
@@ -392,22 +396,22 @@ require_once('config.php')
                     <div class="form-group mt-4">
                         <label class="form-label fw-bold">3.3.1</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="lightingFacility1" id="electric">
+                            <input class="form-check-input" type="radio" required name="lightingFacility1" id="electric">
                             <label class="form-check-label" for="electric">Electric</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="lightingFacility1" id="keroseneLamp">
+                            <input class="form-check-input" type="radio" required name="lightingFacility1" id="keroseneLamp">
                             <label class="form-check-label" for="keroseneLamp">Kerosene lamp</label>
                         </div>
                     </div>
                     <div class="form-group mt-4">
                         <label class="form-label fw-bold">3.3.2</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="lightingFacility2" id="adequate">
+                            <input class="form-check-input" type="radio" required name="lightingFacility2" id="adequate">
                             <label class="form-check-label" for="adequate">Adequate</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="lightingFacility2" id="inadequate">
+                            <input class="form-check-input" type="radio" required name="lightingFacility2" id="inadequate">
                             <label class="form-check-label" for="inadequate">Inadequate</label>
                         </div>
                     </div>
@@ -416,19 +420,19 @@ require_once('config.php')
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">3.4 Cooking facility</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="cookingFacility" id="electricStove">
+                        <input class="form-check-input" type="radio" required name="cookingFacility" id="electricStove">
                         <label class="form-check-label" for="electricStove">Electric stove</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="cookingFacility" id="gas">
+                        <input class="form-check-input" type="radio" required name="cookingFacility" id="gas">
                         <label class="form-check-label" for="gas">Gas</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="cookingFacility" id="kerosene">
+                        <input class="form-check-input" type="radio" required name="cookingFacility" id="kerosene">
                         <label class="form-check-label" for="kerosene">Kerosene</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="cookingFacility" id="firewoodCharcoal">
+                        <input class="form-check-input" type="radio" required name="cookingFacility" id="firewoodCharcoal">
                         <label class="form-check-label" for="firewoodCharcoal">Firewood/charcoal</label>
                     </div>
                 </div>
@@ -436,11 +440,11 @@ require_once('config.php')
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">3.4.1 Sanitary Condition:</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="sanitaryCondition" id="good">
+                        <input class="form-check-input" type="radio" required name="sanitaryCondition" id="good">
                         <label class="form-check-label" for="good">Good</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="sanitaryCondition" id="poor">
+                        <input class="form-check-input" type="radio" required name="sanitaryCondition" id="poor">
                         <label class="form-check-label" for="poor">Poor</label>
                     </div>
                 </div>
@@ -448,19 +452,19 @@ require_once('config.php')
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">3.5 Drainage facility</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="drainageFacility" id="none">
+                        <input class="form-check-input" type="radio" required name="drainageFacility" id="none">
                         <label class="form-check-label" for="none">None</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="drainageFacility" id="openDrainage">
+                        <input class="form-check-input" type="radio" required name="drainageFacility" id="openDrainage">
                         <label class="form-check-label" for="openDrainage">Open Drainage</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="drainageFacility" id="blindDrainage">
+                        <input class="form-check-input" type="radio" required name="drainageFacility" id="blindDrainage">
                         <label class="form-check-label" for="blindDrainage">Blind drainage</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="drainageFacility" id="others">
+                        <input class="form-check-input" type="radio" required name="drainageFacility" id="others">
                         <label class="form-check-label" for="others">Others</label>
                         <input type="text" class="form-control" placeholder="Specify others">
                     </div>
@@ -469,61 +473,58 @@ require_once('config.php')
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">3.6 Number of bedrooms</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="numberOfBedrooms" id="none">
+                        <input class="form-check-input" type="radio" required name="numberOfBedrooms" id="none">
                         <label class="form-check-label" for="none">None</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="numberOfBedrooms" id="one">
+                        <input class="form-check-input" type="radio" required name="numberOfBedrooms" id="one">
                         <label class="form-check-label" for="one">1</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="numberOfBedrooms" id="two">
+                        <input class="form-check-input" type="radio" required name="numberOfBedrooms" id="two">
                         <label class="form-check-label" for="two">2</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="numberOfBedrooms" id="threeOrMore">
+                        <input class="form-check-input" type="radio" required name="numberOfBedrooms" id="threeOrMore">
                         <label class="form-check-label" for="threeOrMore">3 or more</label>
                     </div>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="sleepingArrangement">Remarks: (Describe the Family's Sleeping Arrangement)</label>
-                    <textarea class="form-control" id="sleepingArrangement" rows="3"></textarea>
+                    <label class="form-label fw-bold" for="sleepingArrangement">Remarks: (Describe the Family's Sleeping
+                        Arrangement)</label>
+                    <textarea class="form-control" required id="sleepingArrangement" rows="3"></textarea>
                 </div>
 
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">3.7 Adequacy of Living Space</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="livingSpaceAdequacy" id="adequate">
-                        <label class="form-check-label" for="adequate">Adequate</label>
+                        <input class="form-check-input" type="radio" required name="livingSpaceAdequacy" id="adequatelivingSpaceAdequacy">
+                        <label class="form-check-label" for="adequatelivingSpaceAdequacy">Adequate</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="livingSpaceAdequacy" id="inadequate">
-                        <label class="form-check-label" for="inadequate">Inadequate</label>
-                    </div>
-                    <div class="form-group mt-4">
-                        <label class="form-label fw-bold" for="floorPlan">Draw the floor plan</label>
-                        <textarea class="form-control" id="floorPlan" rows="3"></textarea>
+                        <input class="form-check-input" type="radio" required name="livingSpaceAdequacy" id="inadequatelivingSpaceAdequacy">
+                        <label class="form-check-label" for="inadequatelivingSpaceAdequacy">Inadequate</label>
                     </div>
                 </div>
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">3.8 Numbers of windows</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="numberOfWindows" id="none">
+                        <input class="form-check-input" type="radio" required name="numberOfWindows" id="none">
                         <label class="form-check-label" for="none">None</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="numberOfWindows" id="one">
+                        <input class="form-check-input" type="radio" required name="numberOfWindows" id="one">
                         <label class="form-check-label" for="one">1</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="numberOfWindows" id="two">
+                        <input class="form-check-input" type="radio" required name="numberOfWindows" id="two">
                         <label class="form-check-label" for="two">2</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="numberOfWindows" id="threeOrMore">
+                        <input class="form-check-input" type="radio" required name="numberOfWindows" id="threeOrMore">
                         <label class="form-check-label" for="threeOrMore">3 or more</label>
                     </div>
                 </div>
@@ -531,19 +532,19 @@ require_once('config.php')
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">3.9 Food storage</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="foodStorage" id="none">
+                        <input class="form-check-input" type="radio" required name="foodStorage" id="none">
                         <label class="form-check-label" for="none">None</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="foodStorage" id="refrigerator">
+                        <input class="form-check-input" type="radio" required name="foodStorage" id="refrigerator">
                         <label class="form-check-label" for="refrigerator">Refrigerator</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="foodStorage" id="cabinet">
+                        <input class="form-check-input" type="radio" required name="foodStorage" id="cabinet">
                         <label class="form-check-label" for="cabinet">Cabinet</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="foodStorage" id="others">
+                        <input class="form-check-input" type="radio" required name="foodStorage" id="others">
                         <label class="form-check-label" for="others">Others</label>
                         <input type="text" class="form-control" placeholder="Specify others">
                     </div>
@@ -603,48 +604,49 @@ require_once('config.php')
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="comfortRoomDistance">3.12 Comfort Room Distance</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="inside" name="comfortRoomDistance" value="inside">
+                        <input class="form-check-input" type="radio" required id="inside" name="comfortRoomDistance" value="inside">
                         <label class="form-check-label" for="inside">Inside</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="outside" name="comfortRoomDistance" value="outside">
+                        <input class="form-check-input" type="radio" required id="outside" name="comfortRoomDistance" value="outside">
                         <label class="form-check-label" for="outside">Outside</label>
                     </div>
                     <div class="form-group mt-4">
                         <label for="outsideDistance">If outside, how far? (in meters)</label>
-                        <input type="text" class="form-control" id="outsideDistance" placeholder="Enter distance in meters">
+                        <input type="text" class="form-control" required id="outsideDistance" placeholder="Enter distance in meters">
                     </div>
                 </div>
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="comfortRoomOwnership">3.13 Comfort Room Ownership</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="owned" name="comfortRoomOwnership" value="owned">
+                        <input class="form-check-input" type="radio" required id="owned" name="comfortRoomOwnership" value="owned">
                         <label class="form-check-label" for="owned">Owned</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="public" name="comfortRoomOwnership" value="public">
+                        <input class="form-check-input" type="radio" required id="public" name="comfortRoomOwnership" value="public">
                         <label class="form-check-label" for="public">Public</label>
                     </div>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="sanitaryCondition">3.14 Sanitary Condition: Describe briefly the cleanliness of the toilet</label>
-                    <textarea class="form-control" id="sanitaryCondition" rows="3"></textarea>
+                    <label class="form-label fw-bold" for="sanitaryCondition">3.14 Sanitary Condition: Describe briefly
+                        the cleanliness of the toilet</label>
+                    <textarea class="form-control" required id="sanitaryCondition" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="waterSource">3.14 Water Source</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="pointSource" name="waterSource" value="pointSource">
+                        <input class="form-check-input" type="radio" required id="pointSource" name="waterSource" value="pointSource">
                         <label class="form-check-label" for="pointSource">Point source</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="communalSystem" name="waterSource" value="communalSystem">
+                        <input class="form-check-input" type="radio" required id="communalSystem" name="waterSource" value="communalSystem">
                         <label class="form-check-label" for="communalSystem">Communal System/stand post</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="waterworksSystem" name="waterSource" value="waterworksSystem">
+                        <input class="form-check-input" type="radio" required id="waterworksSystem" name="waterSource" value="waterworksSystem">
                         <label class="form-check-label" for="waterworksSystem">Waterworks system</label>
                     </div>
                 </div>
@@ -652,18 +654,18 @@ require_once('config.php')
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="waterOwnership">3.15 Ownership of water supply</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="private" name="waterOwnership" value="private">
+                        <input class="form-check-input" type="radio" required id="private" name="waterOwnership" value="private">
                         <label class="form-check-label" for="private">Private</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="publicWater" name="waterOwnership" value="public">
+                        <input class="form-check-input" type="radio" required id="publicWater" name="waterOwnership" value="public">
                         <label class="form-check-label" for="publicWater">Public</label>
                     </div>
                 </div>
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="potabilityRemarks">Remarks: (Potability)</label>
-                    <textarea class="form-control" id="potabilityRemarks" rows="3"></textarea>
+                    <textarea class="form-control" required id="potabilityRemarks" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
@@ -672,11 +674,11 @@ require_once('config.php')
                         <input class="form-check-input" type="checkbox" id="collected" name="garbageDisposal" value="collected">
                         <label class="form-check-label" for="collected">Collected:</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" id="government" name="collectedBy" value="government">
+                            <input class="form-check-input" type="radio" required id="government" name="collectedBy" value="government">
                             <label class="form-check-label" for="government">Government</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" id="private" name="collectedBy" value="private">
+                            <input class="form-check-input" type="radio" required id="private" name="collectedBy" value="private">
                             <label class="form-check-label" for="private">Private</label>
                         </div>
                     </div>
@@ -727,18 +729,20 @@ require_once('config.php')
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="animalLocation">3.18 Where the animal is kept? Describe</label>
-                    <textarea class="form-control" id="animalLocation" rows="3"></textarea>
+                    <label class="form-label fw-bold" for="animalLocation">3.18 Where the animal is kept?
+                        Describe</label>
+                    <textarea class="form-control" required id="animalLocation" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="animalImmunization">3.18 Immunization Status of Animal Raised</label>
+                    <label class="form-label fw-bold" for="animalImmunization">3.18 Immunization Status of Animal
+                        Raised</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="immunized" name="animalImmunization" value="immunized">
+                        <input class="form-check-input" type="radio" required id="immunized" name="animalImmunization" value="immunized">
                         <label class="form-check-label" for="immunized">Immunized</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="notImmunized" name="animalImmunization" value="notImmunized">
+                        <input class="form-check-input" type="radio" required id="notImmunized" name="animalImmunization" value="notImmunized">
                         <label class="form-check-label" for="notImmunized">Not Immunized</label>
                     </div>
                 </div>
@@ -766,22 +770,24 @@ require_once('config.php')
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="neighborhoodType">3.20 Kind of Neighborhood</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="congested" name="neighborhoodType" value="congested">
+                        <input class="form-check-input" type="radio" required id="congested" name="neighborhoodType" value="congested">
                         <label class="form-check-label" for="congested">Congested</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="slum" name="neighborhoodType" value="slum">
+                        <input class="form-check-input" type="radio" required id="slum" name="neighborhoodType" value="slum">
                         <label class="form-check-label" for="slum">Slum</label>
                     </div>
                     <div class="form-group mt-4">
-                        <label for="sanitationDescription">Describe briefly the state of sanitation of immediate vicinity where the house is located</label>
-                        <textarea class="form-control" id="sanitationDescription" rows="3"></textarea>
+                        <label for="sanitationDescription">Describe briefly the state of sanitation of immediate
+                            vicinity where the house is located</label>
+                        <textarea class="form-control" required id="sanitationDescription" rows="3"></textarea>
                     </div>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="breedingSites">3.21 Presence of breeding sites of vectors of diseases describe:</label>
-                    <textarea class="form-control" id="breedingSites" rows="3"></textarea>
+                    <label class="form-label fw-bold" for="breedingSites">3.21 Presence of breeding sites of vectors of
+                        diseases describe:</label>
+                    <textarea class="form-control" required id="breedingSites" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
@@ -809,35 +815,40 @@ require_once('config.php')
                 <h4 class="fw-bold mt-4">I. SOCIAL INDICATORS</h4>
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="language">1. Language or dialect spoken:</label>
-                    <input type="text" class="form-control" id="language" name="language">
+                    <input type="text" class="form-control" required id="language" name="language">
                 </div>
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="literacy">2. Literacy (ability to read or write in language):</label>
-                    <input type="text" class="form-control" id="literacy" name="literacy">
+                    <label class="form-label fw-bold" for="literacy">2. Literacy (ability to read or write in
+                        language):</label>
+                    <input type="text" class="form-control" required id="literacy" name="literacy">
                 </div>
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="social_network">3. Describe the degree of social network with friends, neighbors, and other relatives:</label>
-                    <textarea class="form-control" id="social_network" name="social_network"></textarea>
+                    <label class="form-label fw-bold" for="social_network">3. Describe the degree of social network with
+                        friends, neighbors, and other relatives:</label>
+                    <textarea class="form-control" required id="social_network" name="social_network"></textarea>
                 </div>
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="family_network">4. Describe the network of the family with religious organizations:</label>
-                    <textarea class="form-control" id="family_network" name="family_network"></textarea>
+                    <label class="form-label fw-bold" for="family_network">4. Describe the network of the family with
+                        religious organizations:</label>
+                    <textarea class="form-control" required id="family_network" name="family_network"></textarea>
                 </div>
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="social_org_network">5. Describe network with social organizations:</label>
-                    <textarea class="form-control" id="social_org_network" name="social_org_network"></textarea>
+                    <label class="form-label fw-bold" for="social_org_network">5. Describe network with social
+                        organizations:</label>
+                    <textarea class="form-control" required id="social_org_network" name="social_org_network"></textarea>
                 </div>
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="educational_experiences">6. Describe the educational experiences:</label>
-                    <textarea class="form-control" id="educational_experiences" name="educational_experiences"></textarea>
+                    <label class="form-label fw-bold" for="educational_experiences">6. Describe the educational
+                        experiences:</label>
+                    <textarea class="form-control" required id="educational_experiences" name="educational_experiences"></textarea>
                 </div>
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="work_history">7. Describe the work history:</label>
-                    <textarea class="form-control" id="work_history" name="work_history"></textarea>
+                    <textarea class="form-control" required id="work_history" name="work_history"></textarea>
                 </div>
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="leisure_interests">8. Leisure time interests:</label>
-                    <textarea class="form-control" id="leisure_interests" name="leisure_interests"></textarea>
+                    <textarea class="form-control" required id="leisure_interests" name="leisure_interests"></textarea>
                 </div>
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">9. Source of Health Information:</label>
@@ -875,7 +886,8 @@ require_once('config.php')
                 </div>
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="transportation">10. Means of transportation:</label>
-                    <select class="form-control" id="transportation" name="transportation">
+                    <select class="form-select" required id="transportation" name="transportation">
+                        <option value="" selected disabled class="d-none">--- Select transportation ---</option>
                         <option value="Jeepney">Jeepney</option>
                         <option value="Bus">Bus</option>
                         <option value="Tricycle">Tricycle</option>
@@ -889,45 +901,46 @@ require_once('config.php')
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">11. Economic Indicators</label> <br>
-                    <label class="form-label fw-bold" for="monthly_income">2.1 Combined monthly income of the family members:</label>
+                    <label class="form-label fw-bold" for="monthly_income">2.1 Combined monthly income of the family
+                        members:</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="monthly_income" id="income_below_1000" value="Below 1000">
+                        <input class="form-check-input" type="radio" required name="monthly_income" id="income_below_1000" value="Below 1000">
                         <label class="form-check-label" for="income_below_1000">
                             &lt; 1000
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="monthly_income" id="income_1000_2999" value="Php 1000-2999">
+                        <input class="form-check-input" type="radio" required name="monthly_income" id="income_1000_2999" value="Php 1000-2999">
                         <label class="form-check-label" for="income_1000_2999">
                             Php 1000-2999
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="monthly_income" id="income_3000_4999" value="Php 3000-4999">
+                        <input class="form-check-input" type="radio" required name="monthly_income" id="income_3000_4999" value="Php 3000-4999">
                         <label class="form-check-label" for="income_3000_4999">
                             Php 3000-4999
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="monthly_income" id="income_5000_6999" value="Php 5000-6999">
+                        <input class="form-check-input" type="radio" required name="monthly_income" id="income_5000_6999" value="Php 5000-6999">
                         <label class="form-check-label" for="income_5000_6999">
                             Php 5000-6999
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="monthly_income" id="income_7000_8999" value="Php 7000-8999">
+                        <input class="form-check-input" type="radio" required name="monthly_income" id="income_7000_8999" value="Php 7000-8999">
                         <label class="form-check-label" for="income_7000_8999">
                             Php 7000-8999
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="monthly_income" id="income_9000_10999" value="Php 9000-10999">
+                        <input class="form-check-input" type="radio" required name="monthly_income" id="income_9000_10999" value="Php 9000-10999">
                         <label class="form-check-label" for="income_9000_10999">
                             Php 9000-10999
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="monthly_income" id="income_above_11000" value="Php 1100-above">
+                        <input class="form-check-input" type="radio" required name="monthly_income" id="income_above_11000" value="Php 1100-above">
                         <label class="form-check-label" for="income_above_11000">
                             Php 1100-above
                         </label>
@@ -935,15 +948,16 @@ require_once('config.php')
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="income_adequacy">12. Adequacy of income for family expenses:</label>
+                    <label class="form-label fw-bold" for="income_adequacy">12. Adequacy of income for family
+                        expenses:</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="income_adequacy" id="income_adequate" value="Yes">
+                        <input class="form-check-input" type="radio" required name="income_adequacy" id="income_adequate" value="Yes">
                         <label class="form-check-label" for="income_adequate">
                             Yes
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="income_adequacy" id="income_inadequate" value="No">
+                        <input class="form-check-input" type="radio" required name="income_adequacy" id="income_inadequate" value="No">
                         <label class="form-check-label" for="income_inadequate">
                             No
                         </label>
@@ -954,21 +968,21 @@ require_once('config.php')
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="meal_frequency">13. Frequency of Meals:</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="meal_frequency" id="meals_1_2" value="1-2">
+                        <input class="form-check-input" type="radio" required name="meal_frequency" id="meals_1_2" value="1-2">
                         <label class="form-check-label" for="meals_1_2">
                             1-2
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="meal_frequency" id="meals_3" value="3">
+                        <input class="form-check-input" type="radio" required name="meal_frequency" id="meals_3" value="3">
                         <label class="form-check-label" for="meals_3">
                             3
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="meal_frequency" id="meals_3_or_more" value="3 or more">
+                        <input class="form-check-input" type="radio" required name="meal_frequency" id="meals_3_or_more" value="3 or more">
                         <label class="form-check-label" for="meals_3_or_more">
                             3
                         </label>
@@ -976,14 +990,15 @@ require_once('config.php')
 
 
                     <div class="form-group mt-4">
-                        <label class="form-label fw-bold" for="expenditure_percentage">14.A. Percentage of expenditure:</label>
-                        <input type="text" class="form-control" id="expenditure_percentage" name="expenditure_percentage">
+                        <label class="form-label fw-bold" for="expenditure_percentage">14.A. Percentage of
+                            expenditure:</label>
+                        <input type="text" class="form-control" required id="expenditure_percentage" name="expenditure_percentage">
 
                     </div>
 
                     <div class="form-group mt-4">
                         <label class="form-label fw-bold" for="expenditure_chart">14.B. Chart:</label>
-                        <input type="text" class="form-control" id="expenditure_chart" name="expenditure_chart">
+                        <input type="text" class="form-control" required id="expenditure_chart" name="expenditure_chart">
 
                     </div>
 
@@ -991,77 +1006,81 @@ require_once('config.php')
 
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="monthly_income">11. Combined monthly income of the family members:</label>
+                    <label class="form-label fw-bold">15. Social Facilities:</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="monthly_income" id="income_below_1000" value="Below 1000">
-                        <label class="form-check-label" for="income_below_1000">
-                            &lt; 1000
-                        </label>
+                        <input class="form-check-input" type="checkbox" id="social_facility_church" name="social_facilities[]" value="Church">
+                        <label class="form-check-label" for="social_facility_church">Church</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="monthly_income" id="income_1000_2999" value="Php 1000-2999">
-                        <label class="form-check-label" for="income_1000_2999">
-                            Php 1000-2999
-                        </label>
+                        <input class="form-check-input" type="checkbox" id="social_facility_wet_dry_market" name="social_facilities[]" value="Wet & Dry Market">
+                        <label class="form-check-label" for="social_facility_wet_dry_market">Wet & Dry Market</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="monthly_income" id="income_3000_4999" value="Php 3000-4999">
-                        <label class="form-check-label" for="income_3000_4999">
-                            Php 3000-4999
-                        </label>
+                        <input class="form-check-input" type="checkbox" id="social_facility_day_care_center" name="social_facilities[]" value="Day Care Center">
+                        <label class="form-check-label" for="social_facility_day_care_center">Day Care Center</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="monthly_income" id="income_5000_6999" value="Php 5000-6999">
-                        <label class="form-check-label" for="income_5000_6999">
-                            Php 5000-6999
-                        </label>
+                        <input class="form-check-input" type="checkbox" id="social_facility_elementary_school" name="social_facilities[]" value="Elementary School">
+                        <label class="form-check-label" for="social_facility_elementary_school">Elementary School</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="monthly_income" id="income_7000_8999" value="Php 7000-8999">
-                        <label class="form-check-label" for="income_7000_8999">
-                            Php 7000-8999
-                        </label>
+                        <input class="form-check-input" type="checkbox" id="social_facility_high_school" name="social_facilities[]" value="High School">
+                        <label class="form-check-label" for="social_facility_high_school">High School</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="monthly_income" id="income_9000_10999" value="Php 9000-10999">
-                        <label class="form-check-label" for="income_9000_10999">
-                            Php 9000-10999
-                        </label>
+                        <input class="form-check-input" type="checkbox" id="social_facility_park" name="social_facilities[]" value="Park">
+                        <label class="form-check-label" for="social_facility_park">Park</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="monthly_income" id="income_above_11000" value="Php 1100-above">
-                        <label class="form-check-label" for="income_above_11000">
-                            Php 1100-above
-                        </label>
+                        <input class="form-check-input" type="checkbox" id="social_facility_sports_complex" name="social_facilities[]" value="Sports Complex">
+                        <label class="form-check-label" for="social_facility_sports_complex">Sports Complex</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="social_facility_health_center" name="social_facilities[]" value="Health Center">
+                        <label class="form-check-label" for="social_facility_health_center">Health Center</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="social_facility_senior_citizens_hall" name="social_facilities[]" value="Senior Citizen’s Hall">
+                        <label class="form-check-label" for="social_facility_senior_citizens_hall">Senior Citizen’s Hall</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="social_facility_others" name="social_facilities[]" value="Others">
+                        <label class="form-check-label" for="social_facility_others">Others (specify):</label>
+                        <input type="text" class="form-control" id="social_facility_others_specify" name="social_facility_others_specify">
                     </div>
                 </div>
 
+
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="health_care_facilities">16. Describe the health care facilities and health services available in the community:</label>
-                    <textarea class="form-control" id="health_care_facilities" name="health_care_facilities"></textarea>
+                    <label class="form-label fw-bold" for="health_care_facilities">16. Describe the health care
+                        facilities and health services available in the community:</label>
+                    <textarea class="form-control" required id="health_care_facilities" name="health_care_facilities"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="distance_to_facility">17. Distance of the house to the nearest health care facility:</label>
-                    <input type="text" class="form-control" id="distance_to_facility" name="distance_to_facility">
+                    <label class="form-label fw-bold" for="distance_to_facility">17. Distance of the house to the
+                        nearest health care facility:</label>
+                    <input type="text" class="form-control" required id="distance_to_facility" name="distance_to_facility">
                 </div>
 
 
                 <h5 class="fw-bold mt-4">II. CULTURAL FACTORS and FAMILY HEALTH AND HEALTH BEHAVIOR</h5>
 
                 <div class="form-group mt-2">
-                    <label class="form-label fw-bold" for="family_spirituality">1. Describe the spirituality of the family:</label>
-                    <textarea class="form-control" id="family_spirituality" name="family_spirituality"></textarea>
+                    <label class="form-label fw-bold" for="family_spirituality">1. Describe the spirituality of the
+                        family:</label>
+                    <textarea class="form-control" required id="family_spirituality" name="family_spirituality"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="rituals_celebrations">2. Rituals (holidays and celebrations):</label>
-                    <textarea class="form-control" id="rituals_celebrations" name="rituals_celebrations"></textarea>
+                    <label class="form-label fw-bold" for="rituals_celebrations">2. Rituals (holidays and
+                        celebrations):</label>
+                    <textarea class="form-control" required id="rituals_celebrations" name="rituals_celebrations"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="dietary_habits">3. Dietary habits:</label>
-                    <textarea class="form-control" id="dietary_habits" name="dietary_habits"></textarea>
+                    <textarea class="form-control" required id="dietary_habits" name="dietary_habits"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
@@ -1076,27 +1095,30 @@ require_once('config.php')
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="leadership_laissez_faire" name="leadership_style" value="Laissez Faire Leadership Style">
-                        <label class="form-check-label" for="leadership_laissez_faire">Laissez Faire Leadership Style</label>
+                        <label class="form-check-label" for="leadership_laissez_faire">Laissez Faire Leadership
+                            Style</label>
                     </div>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="health_beliefs">5. Health Beliefs pertaining to Childcare, Sickness, Pregnancy, Postpartum care, Newborn, Health and Illness:</label>
-                    <textarea class="form-control" id="health_beliefs" name="health_beliefs"></textarea>
+                    <label class="form-label fw-bold" for="health_beliefs">5. Health Beliefs pertaining to Childcare,
+                        Sickness, Pregnancy, Postpartum care, Newborn, Health and Illness:</label>
+                    <textarea class="form-control" required id="health_beliefs" name="health_beliefs"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="health_concepts">6. Concepts of Health and Illness:</label>
-                    <textarea class="form-control" id="health_concepts" name="health_concepts"></textarea>
+                    <textarea class="form-control" required id="health_concepts" name="health_concepts"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="health_maintenance">7. Ways of Health Maintenance:</label>
-                    <textarea class="form-control" id="health_maintenance" name="health_maintenance"></textarea>
+                    <textarea class="form-control" required id="health_maintenance" name="health_maintenance"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="consultation_preference">8. Where do you consult when sick?</label>
+                    <label class="form-label fw-bold" for="consultation_preference">8. Where do you consult when
+                        sick?</label>
                     <div>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="consultation_health_center" name="consultation_preference" value="Health center">
@@ -1112,19 +1134,22 @@ require_once('config.php')
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="consultation_faith_healer" name="consultation_preference" value="Traditional Faith healer">
-                            <label class="form-check-label" for="consultation_faith_healer">Traditional Faith healer</label>
+                            <label class="form-check-label" for="consultation_faith_healer">Traditional Faith
+                                healer</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="social_issues_conditions">9. Conditions that cause social issues/conflicts:</label>
-                    <textarea class="form-control" id="social_issues_conditions" name="social_issues_conditions"></textarea>
+                    <label class="form-label fw-bold" for="social_issues_conditions">9. Conditions that cause social
+                        issues/conflicts:</label>
+                    <textarea class="form-control" required id="social_issues_conditions" name="social_issues_conditions"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="effective_practices">10. Practices/approaches that are effective in settling issues and concerns within the community:</label>
-                    <textarea class="form-control" id="effective_practices" name="effective_practices"></textarea>
+                    <label class="form-label fw-bold" for="effective_practices">10. Practices/approaches that are
+                        effective in settling issues and concerns within the community:</label>
+                    <textarea class="form-control" required id="effective_practices" name="effective_practices"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
@@ -1139,28 +1164,33 @@ require_once('config.php')
                             <label class="form-check-label" for="drinking">Drinking</label>
                         </div>
                     </div>
-                    <label class="form-label fw-bold" for="vices_description">Describe the reasons, years of exposure and history of quitting:</label>
-                    <textarea class="form-control" id="vices_description" name="vices_description"></textarea>
+                    <label class="form-label fw-bold" for="vices_description">Describe the reasons, years of exposure
+                        and history of quitting:</label>
+                    <textarea class="form-control" required id="vices_description" name="vices_description"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="daily_activities">12. Activities of daily living (how family spends a typical day):</label>
-                    <textarea class="form-control" id="daily_activities" name="daily_activities"></textarea>
+                    <label class="form-label fw-bold" for="daily_activities">12. Activities of daily living (how family
+                        spends a typical day):</label>
+                    <textarea class="form-control" required id="daily_activities" name="daily_activities"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="health_history">13. Health history (pregnancy, illness, death within the past 5 years/reasons, causes of death and illness):</label>
-                    <textarea class="form-control" id="health_history" name="health_history"></textarea>
+                    <label class="form-label fw-bold" for="health_history">13. Health history (pregnancy, illness, death
+                        within the past 5 years/reasons, causes of death and illness):</label>
+                    <textarea class="form-control" required id="health_history" name="health_history"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="health_status">14. Health status (problems and priorities):</label>
-                    <textarea class="form-control" id="health_status" name="health_status"></textarea>
+                    <label class="form-label fw-bold" for="health_status">14. Health status (problems and
+                        priorities):</label>
+                    <textarea class="form-control" required id="health_status" name="health_status"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="form-label fw-bold" for="home_remedies">15. Describe home remedies during sickness:</label>
-                    <textarea class="form-control" id="home_remedies" name="home_remedies"></textarea>
+                    <label class="form-label fw-bold" for="home_remedies">15. Describe home remedies during
+                        sickness:</label>
+                    <textarea class="form-control" required id="home_remedies" name="home_remedies"></textarea>
                 </div>
 
 
@@ -1168,7 +1198,8 @@ require_once('config.php')
                 <div class="form-group mt-4">
                     <label class="fw-bold form-label">III. OTHER INFORMATION RELATED TO FAMILY HEALTH</label>
                     <div>
-                        <label class="fw-bold form-label">A. MATERNAL AND CHILD HEALTH (FOR PREGNANT ONLY, LEAVE THIS PART IF FAMILY HAS NO PREGNANT MEMBER)</label>
+                        <label class="fw-bold form-label">A. MATERNAL AND CHILD HEALTH (FOR PREGNANT ONLY, LEAVE THIS
+                            PART IF FAMILY HAS NO PREGNANT MEMBER)</label>
                         <div class="form-group mt-4">
                             <label class="fw-bold form-label">1. PNCU</label>
                             <div class="form-check">
@@ -1181,18 +1212,19 @@ require_once('config.php')
                             </div>
                             <div class="form-group mt-4">
                                 <label class="fw-bold form-label">Where:</label>
-                                <input type="text" class="form-control" id="pncu_location" name="pncu_location">
+                                <input type="text" class="form-control" required id="pncu_location" name="pncu_location">
                             </div>
                         </div>
 
                         <div class="form-group mt-4">
                             <label class="fw-bold form-label" for="reason_negative_pncu">2. Reason for (-)PNCU:</label>
-                            <textarea class="form-control" id="reason_negative_pncu" name="reason_negative_pncu"></textarea>
+                            <textarea class="form-control" required id="reason_negative_pncu" name="reason_negative_pncu"></textarea>
                         </div>
 
                         <div class="form-group mt-4">
-                            <label class="fw-bold form-label" for="children_born">3. No. of Children born exactly 9 mos.:</label>
-                            <input type="text" class="form-control" id="children_born" name="children_born">
+                            <label class="fw-bold form-label" for="children_born">3. No. of Children born exactly 9
+                                mos.:</label>
+                            <input type="text" class="form-control" required id="children_born" name="children_born">
                         </div>
 
                         <div class="form-group mt-4">
@@ -1207,7 +1239,7 @@ require_once('config.php')
                             </div>
                             <div class="form-group mt-4">
                                 <label class="fw-bold form-label">No. of doses received:</label>
-                                <input type="text" class="form-control" id="tt_doses_received" name="tt_doses_received">
+                                <input type="text" class="form-control" required id="tt_doses_received" name="tt_doses_received">
                             </div>
                         </div>
 
@@ -1252,20 +1284,23 @@ require_once('config.php')
                         </div>
 
                         <div class="form-group mt-4">
-                            <label class="fw-bold form-label" for="pregnancy_complications">6. Any history of pregnancy complications?</label>
-                            <textarea class="form-control" id="pregnancy_complications" name="pregnancy_complications"></textarea>
+                            <label class="fw-bold form-label" for="pregnancy_complications">6. Any history of pregnancy
+                                complications?</label>
+                            <textarea class="form-control" required id="pregnancy_complications" name="pregnancy_complications"></textarea>
                         </div>
 
                         <div class="form-group mt-4">
-                            <label class="fw-bold form-label" for="child_care_beliefs">7. Myths and beliefs about child care</label>
-                            <textarea class="form-control" id="child_care_beliefs" name="child_care_beliefs"></textarea>
+                            <label class="fw-bold form-label" for="child_care_beliefs">7. Myths and beliefs about child
+                                care</label>
+                            <textarea class="form-control" required id="child_care_beliefs" name="child_care_beliefs"></textarea>
                         </div>
 
                         <div class="form-group mt-4">
                             <label class="fw-bold form-label">8. For children 0-2 years old ONLY</label>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="infant_feeding_breastfeeding" name="infant_feeding" value="Breast feeding">
-                                <label class="form-check-label" for="infant_feeding_breastfeeding">Breast feeding</label>
+                                <label class="form-check-label" for="infant_feeding_breastfeeding">Breast
+                                    feeding</label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="infant_feeding_mixed" name="infant_feeding" value="Mixed feeding">
@@ -1296,15 +1331,17 @@ form-check-input" type="checkbox" id="infant_feeding_bottle" name="infant_feedin
                         </div>
 
                         <div class="form-group mt-4">
-                            <label class="fw-bold form-label" for="food_supplement_babies">8.3 Food supplement given to babies</label>
-                            <textarea class="form-control" id="food_supplement_babies" name="food_supplement_babies"></textarea>
+                            <label class="fw-bold form-label" for="food_supplement_babies">8.3 Food supplement given to
+                                babies</label>
+                            <textarea class="form-control" required id="food_supplement_babies" name="food_supplement_babies"></textarea>
                         </div>
                     </div>
                 </div>
 
 
 
-                <label class="fw-bold mt-4">9. Immunization Status of 0-12 months only (leave if family has no 0-12 mos. Old member)</label>
+                <label class="fw-bold mt-4">9. Immunization Status of 0-12 months only (leave if family has no 0-12 mos.
+                    Old member)</label>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -1320,55 +1357,55 @@ form-check-input" type="checkbox" id="infant_feeding_bottle" name="infant_feedin
                             <td>
                                 <div class="form-group mt-4">
                                     <label for="bcg_date">Date:</label>
-                                    <input type="date" class="form-control" id="bcg_date" name="bcg_date">
+                                    <input type="date" class="form-control" required id="bcg_date" name="bcg_date">
                                 </div>
                             </td>
                             <td>
                                 <div class="form-group mt-4">
                                     <label for="hepB1Date">Hep B 1 Date:</label>
-                                    <input type="date" class="form-control" id="hepB1Date" name="hepB1Date">
+                                    <input type="date" class="form-control" required id="hepB1Date" name="hepB1Date">
                                 </div>
                                 <div class="form-group mt-4">
                                     <label for="hepB2Date">Hep B 2 Date:</label>
-                                    <input type="date" class="form-control" id="hepB2Date" name="hepB2Date">
+                                    <input type="date" class="form-control" required id="hepB2Date" name="hepB2Date">
                                 </div>
                                 <div class="form-group mt-4">
                                     <label for="hepB3Date">Hep B 3 Date:</label>
-                                    <input type="date" class="form-control" id="hepB3Date" name="hepB3Date">
+                                    <input type="date" class="form-control" required id="hepB3Date" name="hepB3Date">
                                 </div>
                             </td>
                             <td>
                                 <div class="form-group mt-4">
                                     <label for="opv1Date">OPV 1 Date:</label>
-                                    <input type="date" class="form-control" id="opv1Date" name="opv1Date">
+                                    <input type="date" class="form-control" required id="opv1Date" name="opv1Date">
                                 </div>
                                 <div class="form-group mt-4">
                                     <label for="opv2Date">OPV 2 Date:</label>
-                                    <input type="date" class="form-control" id="opv2Date" name="opv2Date">
+                                    <input type="date" class="form-control" required id="opv2Date" name="opv2Date">
                                 </div>
                                 <div class="form-group mt-4">
                                     <label for="opv3Date">OPV 3 Date:</label>
-                                    <input type="date" class="form-control" id="opv3Date" name="opv3Date">
+                                    <input type="date" class="form-control" required id="opv3Date" name="opv3Date">
                                 </div>
                             </td>
                             <td>
                                 <div class="form-group mt-4">
                                     <label for="dpt1Date">DPT 1 Date:</label>
-                                    <input type="date" class="form-control" id="dpt1Date" name="dpt1Date">
+                                    <input type="date" class="form-control" required id="dpt1Date" name="dpt1Date">
                                 </div>
                                 <div class="form-group mt-4">
                                     <label for="dpt2Date">DPT 2 Date:</label>
-                                    <input type="date" class="form-control" id="dpt2Date" name="dpt2Date">
+                                    <input type="date" class="form-control" required id="dpt2Date" name="dpt2Date">
                                 </div>
                                 <div class="form-group mt-4">
                                     <label for="dpt3Date">DPT 3 Date:</label>
-                                    <input type="date" class="form-control" id="dpt3Date" name="dpt3Date">
+                                    <input type="date" class="form-control" required id="dpt3Date" name="dpt3Date">
                                 </div>
                             </td>
                             <td>
                                 <div class="form-group mt-4">
                                     <label for="amv1Date">AMV 1 Date:</label>
-                                    <input type="date" class="form-control" id="amv1Date" name="amv1Date">
+                                    <input type="date" class="form-control" required id="amv1Date" name="amv1Date">
                                 </div>
                             </td>
 
@@ -1383,11 +1420,11 @@ form-check-input" type="checkbox" id="infant_feeding_bottle" name="infant_feedin
                 <div class="form-group mt-2">
                     <label class="fw-bold form-label" for="family_planning_acceptance">1. Acceptors</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="family_planning_acceptance" id="acceptors" value="acceptors">
+                        <input class="form-check-input" type="radio" required name="family_planning_acceptance" id="acceptors" value="acceptors">
                         <label class="form-check-label" for="acceptors">Acceptors</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="family_planning_acceptance" id="non_acceptors" value="non_acceptors">
+                        <input class="form-check-input" type="radio" required name="family_planning_acceptance" id="non_acceptors" value="non_acceptors">
                         <label class="form-check-label" for="non_acceptors">Non acceptors</label>
                     </div>
                 </div>
@@ -1425,34 +1462,126 @@ form-check-input" type="checkbox" id="infant_feeding_bottle" name="infant_feedin
                 </div>
 
                 <div class="form-group mt-4">
-                    <label class="fw-bold form-label" for="reason_family_planning">3. Reason for family planning:</label>
-                    <input type="text" class="form-control" id="reason_family_planning" name="reason_family_planning">
+                    <label class="fw-bold form-label" for="reason_family_planning">3. Reason for family
+                        planning:</label>
+                    <input type="text" class="form-control" required id="reason_family_planning" name="reason_family_planning">
                 </div>
 
                 <div class="form-group mt-4">
                     <label class="fw-bold form-label" for="reason_non_acceptors">4. Reason for non-acceptors:</label>
-                    <input type="text" class="form-control" id="reason_non_acceptors" name="reason_non_acceptors">
+                    <input type="text" class="form-control" required id="reason_non_acceptors" name="reason_non_acceptors">
                 </div>
 
 
 
 
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 mt-3">
+                            <h4 class="fw-bold">C. CAUSES OF ILLNESS IN THE LAST SIX MONTHS</h4>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>NAME</th>
+                                        <th>AGE</th>
+                                        <th>CAUSE OF SICKNESS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="text" class="form-control" required name="illness_name_1"></td>
+                                        <td><input type="number" class="form-control" required name="illness_age_1"></td>
+                                        <td><input type="text" class="form-control" required name="illness_cause_1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" required name="illness_name_2"></td>
+                                        <td><input type="number" class="form-control" required name="illness_age_2"></td>
+                                        <td><input type="text" class="form-control" required name="illness_cause_2"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
+                    <div class="row">
+                        <div class="col-md-12 mt-3">
+                            <h4 class="fw-bold">D. CAUSES OF DEATH IN THE LAST SIX MONTHS</h4>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>NAME</th>
+                                        <th>AGE</th>
+                                        <th>CAUSE OF DEATH</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="text" class="form-control" required name="death_name_1"></td>
+                                        <td><input type="number" class="form-control" required name="death_age_1"></td>
+                                        <td><input type="text" class="form-control" required name="death_cause_1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" required name="death_name_2"></td>
+                                        <td><input type="number" class="form-control" required name="death_age_2"></td>
+                                        <td><input type="text" class="form-control" required name="death_cause_2"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
-
-
-
-
-
-
-
-
-
-
+                    <div class="row">
+                        <div class="col-md-12 mt-3">
+                            <h4 class="fw-bold">E. CAUSES OF HOSPITALIZATION IN THE LAST SIX MONTHS</h4>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>NAME</th>
+                                        <th>AGE</th>
+                                        <th>CAUSE OF HOSPITALIZATION</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="text" class="form-control" required name="hospitalization_name_1"></td>
+                                        <td><input type="number" class="form-control" required name="hospitalization_age_1"></td>
+                                        <td><input type="text" class="form-control" required name="hospitalization_cause_1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" required name="hospitalization_name_2"></td>
+                                        <td><input type="number" class="form-control" required name="hospitalization_age_2"></td>
+                                        <td><input type="text" class="form-control" required name="hospitalization_cause_2"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end px-4">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
             </form>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        (() => {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
