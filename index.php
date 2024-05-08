@@ -883,6 +883,175 @@ require_once('config.php')
                     </select>
                     <input type="text" class="form-control mt-2" id="other_transportation" name="other_transportation" placeholder="Specify other means of transportation">
                 </div>
+
+
+
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" >11. Economic Indicators</label> <br>
+                    <label class="form-label fw-bold" for="monthly_income">2.1 Combined monthly income of the family members:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="monthly_income" id="income_below_1000" value="Below 1000">
+                        <label class="form-check-label" for="income_below_1000">
+                            &lt; 1000
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="monthly_income" id="income_1000_2999" value="Php 1000-2999">
+                        <label class="form-check-label" for="income_1000_2999">
+                            Php 1000-2999
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="monthly_income" id="income_3000_4999" value="Php 3000-4999">
+                        <label class="form-check-label" for="income_3000_4999">
+                            Php 3000-4999
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="monthly_income" id="income_5000_6999" value="Php 5000-6999">
+                        <label class="form-check-label" for="income_5000_6999">
+                            Php 5000-6999
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="monthly_income" id="income_7000_8999" value="Php 7000-8999">
+                        <label class="form-check-label" for="income_7000_8999">
+                            Php 7000-8999
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="monthly_income" id="income_9000_10999" value="Php 9000-10999">
+                        <label class="form-check-label" for="income_9000_10999">
+                            Php 9000-10999
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="monthly_income" id="income_above_11000" value="Php 1100-above">
+                        <label class="form-check-label" for="income_above_11000">
+                            Php 1100-above
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="income_adequacy">12. Adequacy of income for family expenses:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="income_adequacy" id="income_adequate" value="Yes">
+                        <label class="form-check-label" for="income_adequate">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="income_adequacy" id="income_inadequate" value="No">
+                        <label class="form-check-label" for="income_inadequate">
+                            No
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="meal_frequency">13. Frequency of Meals:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="meal_frequency" id="meals_1_2" value="1-2">
+                        <label class="form-check-label" for="meals_1_2">
+                            1-2
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="meal_frequency" id="meals_3" value="3">
+                        <label class="form-check-label" for="meals_3">
+                            3
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="meal_frequency" id="meals_3_or_more" value="3 or more">
+                        <label class="form-check-label" for="meals_3_or_more">
+                            3
+                        </label>
+                    </div>
+
+
+                    <div class="form-group mt-4">
+                        <label class="form-label fw-bold" for="expenditure_percentage">14.A. Percentage of expenditure:</label>
+                        <input type="text" class="form-control" id="expenditure_percentage" name="expenditure_percentage">
+                
+                    </div>
+
+                    <div class="form-group mt-4">
+                        <label class="form-label fw-bold" for="expenditure_chart">14.B. Chart:</label>
+                        <input type="text" class="form-control" id="expenditure_chart" name="expenditure_chart">
+                
+                    </div>
+
+                </div>
+
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="monthly_income">11. Combined monthly income of the family members:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="monthly_income" id="income_below_1000" value="Below 1000">
+                        <label class="form-check-label" for="income_below_1000">
+                            &lt; 1000
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="monthly_income" id="income_1000_2999" value="Php 1000-2999">
+                        <label class="form-check-label" for="income_1000_2999">
+                            Php 1000-2999
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="monthly_income" id="income_3000_4999" value="Php 3000-4999">
+                        <label class="form-check-label" for="income_3000_4999">
+                            Php 3000-4999
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="monthly_income" id="income_5000_6999" value="Php 5000-6999">
+                        <label class="form-check-label" for="income_5000_6999">
+                            Php 5000-6999
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="monthly_income" id="income_7000_8999" value="Php 7000-8999">
+                        <label class="form-check-label" for="income_7000_8999">
+                            Php 7000-8999
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="monthly_income" id="income_9000_10999" value="Php 9000-10999">
+                        <label class="form-check-label" for="income_9000_10999">
+                            Php 9000-10999
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="monthly_income" id="income_above_11000" value="Php 1100-above">
+                        <label class="form-check-label" for="income_above_11000">
+                            Php 1100-above
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+      <label class="form-label fw-bold" for="health_care_facilities">16. Describe the health care facilities and health services available in the community:</label>
+      <textarea class="form-control" id="health_care_facilities" name="health_care_facilities"></textarea>
+    </div>
+    
+    <div class="form-group mt-4">
+      <label class="form-label fw-bold" for="distance_to_facility">17. Distance of the house to the nearest health care facility:</label>
+      <input type="text" class="form-control" id="distance_to_facility" name="distance_to_facility">
+    </div>
+
+
+    
+
+
+
+
             </form>
         </div>
     </div>
