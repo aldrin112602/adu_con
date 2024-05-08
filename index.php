@@ -58,49 +58,49 @@ require_once('config.php')
         </div>
         <div class="p-5 col" style="height: 100vh; overflow-y: auto;">
             <form action method="post" class="container">
-                <h2 class="text-center mb-4">FAMILY HEALTH ASSESSMENT FORM</h2>
+                <h2 class="text-center mb-4 fw-bold">FAMILY HEALTH ASSESSMENT FORM</h2>
 
                 <div class="form-group row mt-4">
                     <div class="col-md-4">
-                        <label for="familySurname">Family Surname:</label>
-                        <input required type="text" class="form-control form-control-sm" id="familySurname" placeholder="Enter Family Surname">
+                        <label class="form-label fw-bold" for="familySurname">Family Surname:</label>
+                        <input required type="text" class="form-control" id="familySurname" placeholder="Enter Family Surname">
                     </div>
                     <div class="col-md-4">
-                        <label for="houseNumber">House #:</label>
-                        <input required type="text" class="form-control form-control-sm" id="houseNumber" placeholder="Enter House Number">
+                        <label class="form-label fw-bold" for="houseNumber">House #:</label>
+                        <input required type="text" class="form-control" id="houseNumber" placeholder="Enter House Number">
                     </div>
                     <div class="col-md-4">
-                        <label for="purokBarangay">Purok/Barangay:</label>
-                        <input required type="text" class="form-control form-control-sm" id="purokBarangay" placeholder="Enter Purok/Barangay">
+                        <label class="form-label fw-bold" for="purokBarangay">Purok/Barangay:</label>
+                        <input required type="text" class="form-control" id="purokBarangay" placeholder="Enter Purok/Barangay">
                     </div>
                 </div>
                 <div class="form-group row mt-4">
                     <div class="col-md-6">
-                        <label for="religion">Religion:</label>
-                        <input required type="text" class="form-control form-control-sm" id="religion" placeholder="Enter Religion">
+                        <label class="form-label fw-bold" for="religion">Religion:</label>
+                        <input required type="text" class="form-control" id="religion" placeholder="Enter Religion">
                     </div>
                     <div class="col-md-6">
-                        <label for="placeOfOrigin">Place of Origin:</label>
-                        <input required type="text" class="form-control form-control-sm" id="placeOfOrigin" placeholder="Enter Place of Origin">
+                        <label class="form-label fw-bold" for="placeOfOrigin">Place of Origin:</label>
+                        <input required type="text" class="form-control" id="placeOfOrigin" placeholder="Enter Place of Origin">
                     </div>
                 </div>
                 <div class="form-group row mt-4">
                     <div class="col-md-6">
-                        <label for="lengthOfResidency">Length of Residency:</label>
+                        <label class="form-label fw-bold" for="lengthOfResidency">Length of Residency:</label>
                         <div class="input required-group">
-                            <input required type="number" class="form-control form-control-sm" id="lengthOfResidency" placeholder="Enter Length">
+                            <input required type="number" class="form-control" id="lengthOfResidency" placeholder="Enter Length">
                             <div class="input required-group-append">
                                 <span class="input required-group-text">mos./years</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="numberOfFamilyMembers">Number of family members:</label>
-                        <input required type="number" class="form-control form-control-sm" id="numberOfFamilyMembers" placeholder="Enter Number of Family Members">
+                        <label class="form-label fw-bold" for="numberOfFamilyMembers">Number of family members:</label>
+                        <input required type="number" class="form-control" id="numberOfFamilyMembers" placeholder="Enter Number of Family Members">
                     </div>
                 </div>
-                <h4 class="mt-4">A. FAMILY DATA</h4>
-                <h5>1. FAMILY MEMBERS</h5>
+                <h5 class="mt-4 fw-bold">A. FAMILY DATA</h5>
+                <h4 class="fw-bold mt-4">1. FAMILY MEMBERS</h4>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -115,26 +115,31 @@ require_once('config.php')
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><input required type="text" class="form-control form-control-sm"></td>
-                            <td><input required type="date" class="form-control form-control-sm"></td>
-                            <td><input required type="number" class="form-control form-control-sm"></td>
-                            <td><input required type="text" class="form-control form-control-sm"></td>
-                            <td><input required type="text" class="form-control form-control-sm"></td>
-                            <td><input required type="text" class="form-control form-control-sm"></td>
-                            <td><input required type="text" class="form-control form-control-sm"></td>
-                            <td><input required type="number" class="form-control form-control-sm"></td>
-                        </tr>
-                        <!-- Add more rows as needed -->
+                        <?php
+                        for ($i = 0; $i < 10; $i++) {
+                        ?>
+                            <tr>
+                                <td><input name="names[]" type="text" class="form-control"></td>
+                                <td><input name="dateOfBirth[]" type="date" class="form-control"></td>
+                                <td><input name="age[]" type="number" class="form-control"></td>
+                                <td><input name="sex[]" type="text" class="form-control"></td>
+                                <td><input name="civilStatus[]" type="text" class="form-control"></td>
+                                <td><input name="educationalAttainment[]" type="text" class="form-control"></td>
+                                <td><input name="occupation[]" type="text" class="form-control"></td>
+                                <td><input name="income[]" type="number" class="form-control"></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
                     </tbody>
                 </table>
 
 
 
-                <h4>2. FAMILY STRUCTURE AND CHARACTERISTICS</h4>
+                <h4 class="fw-bold mt-4">2. FAMILY STRUCTURE AND CHARACTERISTICS</h4>
 
                 <div class="form-group mt-4">
-                    <label>2.1 Family Structure</label>
+                    <label class="form-label fw-bold">2.1 Family Structure</label>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="nuclear">
                         <label class="form-check-label" for="nuclear">Nuclear</label>
@@ -170,7 +175,7 @@ require_once('config.php')
                 </div>
 
                 <div class="form-group mt-4">
-                    <label>2.2 Base on Authority</label>
+                    <label class="form-label fw-bold">2.2 Base on Authority</label>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="patriarchal">
                         <label class="form-check-label" for="patriarchal">Patriarchal</label>
@@ -190,7 +195,7 @@ require_once('config.php')
                 </div>
 
                 <div class="form-group mt-4">
-                    <label>2.3 Stages of Family Relationships</label>
+                    <label class="form-label fw-bold">2.3 Stages of Family Relationships</label>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="beginning">
                         <label class="form-check-label" for="beginning">Beginning</label>
@@ -222,7 +227,7 @@ require_once('config.php')
                 </div>
 
                 <div class="form-group mt-4">
-                    <label>2.4 Dominant in decision making</label>
+                    <label class="form-label fw-bold">2.4 Dominant in decision making</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="decisionMaking" id="mother">
                         <label class="form-check-label" for="mother">Mother</label>
@@ -243,11 +248,11 @@ require_once('config.php')
                 </div>
 
                 <div class="form-group mt-4">
-                    <label for="howDecisionsAreMade">2.5 How decisions are made</label>
+                    <label class="form-label fw-bold" for="howDecisionsAreMade">2.5 How decisions are made</label>
                     <textarea class="form-control" id="howDecisionsAreMade" rows="3"></textarea>
                 </div>
                 <div class="form-group mt-4">
-                    <label>2.6 General Family Relationships/Dynamics</label>
+                    <label class="form-label fw-bold">2.6 General Family Relationships/Dynamics</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="familyRelationships" id="highlyFavorable">
                         <label class="form-check-label" for="highlyFavorable">Highly Favorable</label>
@@ -264,17 +269,17 @@ require_once('config.php')
                 </div>
 
                 <div class="form-group mt-4">
-                    <label for="significantOthers">2.7 Significant others (Indicate roles they play in the family's life)</label>
+                    <label class="form-label fw-bold" for="significantOthers">2.7 Significant others (Indicate roles they play in the family's life)</label>
                     <textarea class="form-control" id="significantOthers" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label for="relationshipToLargerCommunity">2.8 Relationship of the family to the larger Community (Describe the nature and extent of participation)</label>
+                    <label class="form-label fw-bold" for="relationshipToLargerCommunity">2.8 Relationship of the family to the larger Community (Describe the nature and extent of participation)</label>
                     <textarea class="form-control" id="relationshipToLargerCommunity" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label>2.8.1 Activities Attended:</label>
+                    <label class="form-label fw-bold">2.8.1 Activities Attended:</label>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="barangayAssembly">
                         <label class="form-check-label" for="barangayAssembly">Barangay Assembly</label>
@@ -294,7 +299,7 @@ require_once('config.php')
                 </div>
 
                 <div class="form-group mt-4">
-                    <label>2.8.2 Extent of Participation</label>
+                    <label class="form-label fw-bold">2.8.2 Extent of Participation</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="participationExtent" id="always">
                         <label class="form-check-label" for="always">Always</label>
@@ -318,28 +323,230 @@ require_once('config.php')
                 </div>
 
                 <div class="form-group mt-4">
-                    <label for="bondingOfFamilyMembers">2.9 Describe the bonding of the family members</label>
+                    <label class="form-label fw-bold" for="bondingOfFamilyMembers">2.9 Describe the bonding of the family members</label>
                     <textarea class="form-control" id="bondingOfFamilyMembers" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label for="howMembersCommunicate">2.10 How members communicate</label>
+                    <label class="form-label fw-bold" for="howMembersCommunicate">2.10 How members communicate</label>
                     <textarea class="form-control" id="howMembersCommunicate" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label for="howProblemsAreSolved">2.11 How problems are solved</label>
+                    <label class="form-label fw-bold" for="howProblemsAreSolved">2.11 How problems are solved</label>
                     <textarea class="form-control" id="howProblemsAreSolved" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label for="howConflictIsHandled">2.12 How conflict is handled</label>
+                    <label class="form-label fw-bold" for="howConflictIsHandled">2.12 How conflict is handled</label>
                     <textarea class="form-control" id="howConflictIsHandled" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label for="divisionOfLabor">2.13 Division of labor</label>
+                    <label class="form-label fw-bold" for="divisionOfLabor">2.13 Division of labor</label>
                     <textarea class="form-control" id="divisionOfLabor" rows="3"></textarea>
+                </div>
+
+
+
+                <h4 class="fw-bold mt-4">3. HOME AND ENVIRONMENT</h4>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold">3.1 Construction Materials used</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="constructionMaterials" id="strong">
+                        <label class="form-check-label" for="strong">Strong</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="constructionMaterials" id="light">
+                        <label class="form-check-label" for="light">Light</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="constructionMaterials" id="mixed">
+                        <label class="form-check-label" for="mixed">Mixed</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="constructionMaterials" id="makeshift">
+                        <label class="form-check-label" for="makeshift">Makeshift</label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold">3.2 Home ownership</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="homeOwnership" id="owned">
+                        <label class="form-check-label" for="owned">Owned</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="homeOwnership" id="rent">
+                        <label class="form-check-label" for="rent">Rent</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="homeOwnership" id="rentFree">
+                        <label class="form-check-label" for="rentFree">Rent free</label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold">3.3 Lighting facility</label>
+                    <div class="form-group mt-4">
+                        <label class="form-label fw-bold">3.3.1</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="lightingFacility1" id="electric">
+                            <label class="form-check-label" for="electric">Electric</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="lightingFacility1" id="keroseneLamp">
+                            <label class="form-check-label" for="keroseneLamp">Kerosene lamp</label>
+                        </div>
+                    </div>
+                    <div class="form-group mt-4">
+                        <label class="form-label fw-bold">3.3.2</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="lightingFacility2" id="adequate">
+                            <label class="form-check-label" for="adequate">Adequate</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="lightingFacility2" id="inadequate">
+                            <label class="form-check-label" for="inadequate">Inadequate</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold">3.4 Cooking facility</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="cookingFacility" id="electricStove">
+                        <label class="form-check-label" for="electricStove">Electric stove</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="cookingFacility" id="gas">
+                        <label class="form-check-label" for="gas">Gas</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="cookingFacility" id="kerosene">
+                        <label class="form-check-label" for="kerosene">Kerosene</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="cookingFacility" id="firewoodCharcoal">
+                        <label class="form-check-label" for="firewoodCharcoal">Firewood/charcoal</label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold">3.4.1 Sanitary Condition:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sanitaryCondition" id="good">
+                        <label class="form-check-label" for="good">Good</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sanitaryCondition" id="poor">
+                        <label class="form-check-label" for="poor">Poor</label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold">3.5 Drainage facility</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="drainageFacility" id="none">
+                        <label class="form-check-label" for="none">None</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="drainageFacility" id="openDrainage">
+                        <label class="form-check-label" for="openDrainage">Open Drainage</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="drainageFacility" id="blindDrainage">
+                        <label class="form-check-label" for="blindDrainage">Blind drainage</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="drainageFacility" id="others">
+                        <label class="form-check-label" for="others">Others</label>
+                        <input type="text" class="form-control" placeholder="Specify others">
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold">3.6 Number of bedrooms</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="numberOfBedrooms" id="none">
+                        <label class="form-check-label" for="none">None</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="numberOfBedrooms" id="one">
+                        <label class="form-check-label" for="one">1</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="numberOfBedrooms" id="two">
+                        <label class="form-check-label" for="two">2</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="numberOfBedrooms" id="threeOrMore">
+                        <label class="form-check-label" for="threeOrMore">3 or more</label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="sleepingArrangement">Remarks: (Describe the Family's Sleeping Arrangement)</label>
+                    <textarea class="form-control" id="sleepingArrangement" rows="3"></textarea>
+                </div>
+
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold">3.7 Adequacy of Living Space</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="livingSpaceAdequacy" id="adequate">
+                        <label class="form-check-label" for="adequate">Adequate</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="livingSpaceAdequacy" id="inadequate">
+                        <label class="form-check-label" for="inadequate">Inadequate</label>
+                    </div>
+                    <div class="form-group mt-4">
+                        <label class="form-label fw-bold" for="floorPlan">Draw the floor plan</label>
+                        <textarea class="form-control" id="floorPlan" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold">3.8 Numbers of windows</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="numberOfWindows" id="none">
+                        <label class="form-check-label" for="none">None</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="numberOfWindows" id="one">
+                        <label class="form-check-label" for="one">1</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="numberOfWindows" id="two">
+                        <label class="form-check-label" for="two">2</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="numberOfWindows" id="threeOrMore">
+                        <label class="form-check-label" for="threeOrMore">3 or more</label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold">3.9 Food storage</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="foodStorage" id="none">
+                        <label class="form-check-label" for="none">None</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="foodStorage" id="refrigerator">
+                        <label class="form-check-label" for="refrigerator">Refrigerator</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="foodStorage" id="cabinet">
+                        <label class="form-check-label" for="cabinet">Cabinet</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="foodStorage" id="others">
+                        <label class="form-check-label" for="others">Others</label>
+                        <input type="text" class="form-control" placeholder="Specify others">
+                    </div>
                 </div>
 
 

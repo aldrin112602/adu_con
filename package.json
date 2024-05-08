@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "push": "git add . && git commit -a -m Updated && git push"
+    "push": "git add . && git commit -a -m Updated"
   },
   "keywords": [],
   "author": "",
