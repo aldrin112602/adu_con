@@ -550,6 +550,339 @@ require_once('config.php')
                 </div>
 
 
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="foodPrep">3.10 Food Preparation</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fried" name="foodPrep" value="fried">
+                        <label class="form-check-label" for="fried">Fried</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="boiled" name="foodPrep" value="boiled">
+                        <label class="form-check-label" for="boiled">Boiled</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="otherFoodPrep" name="foodPrep" value="other">
+                        <label class="form-check-label" for="otherFoodPrep">Others</label>
+                        <input type="text" class="form-control" placeholder="Enter other food preparation method">
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="toiletType">3.11 Toilet Type</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="pailSystem" name="toiletType" value="pailSystem">
+                        <label class="form-check-label" for="pailSystem">Pail System</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="openPitPrivy" name="toiletType" value="openPitPrivy">
+                        <label class="form-check-label" for="openPitPrivy">Open Pit Privy</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="closePitPrivy" name="toiletType" value="closePitPrivy">
+                        <label class="form-check-label" for="closePitPrivy">Close Pit Privy</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="boredHoleLatrine" name="toiletType" value="boredHoleLatrine">
+                        <label class="form-check-label" for="boredHoleLatrine">Bored Hole Latrine</label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="toiletType">Antipolo Type</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="waterSealedLatrine" name="antipoloType" value="waterSealedLatrine">
+                        <label class="form-check-label" for="waterSealedLatrine">Water-sealed latrine</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="flushType" name="antipoloType" value="flushType">
+                        <label class="form-check-label" for="flushType">Flush Type</label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="comfortRoomDistance">3.12 Comfort Room Distance</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="inside" name="comfortRoomDistance" value="inside">
+                        <label class="form-check-label" for="inside">Inside</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="outside" name="comfortRoomDistance" value="outside">
+                        <label class="form-check-label" for="outside">Outside</label>
+                    </div>
+                    <div class="form-group mt-4">
+                        <label for="outsideDistance">If outside, how far? (in meters)</label>
+                        <input type="text" class="form-control" id="outsideDistance" placeholder="Enter distance in meters">
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="comfortRoomOwnership">3.13 Comfort Room Ownership</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="owned" name="comfortRoomOwnership" value="owned">
+                        <label class="form-check-label" for="owned">Owned</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="public" name="comfortRoomOwnership" value="public">
+                        <label class="form-check-label" for="public">Public</label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="sanitaryCondition">3.14 Sanitary Condition: Describe briefly the cleanliness of the toilet</label>
+                    <textarea class="form-control" id="sanitaryCondition" rows="3"></textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="waterSource">3.14 Water Source</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="pointSource" name="waterSource" value="pointSource">
+                        <label class="form-check-label" for="pointSource">Point source</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="communalSystem" name="waterSource" value="communalSystem">
+                        <label class="form-check-label" for="communalSystem">Communal System/stand post</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="waterworksSystem" name="waterSource" value="waterworksSystem">
+                        <label class="form-check-label" for="waterworksSystem">Waterworks system</label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="waterOwnership">3.15 Ownership of water supply</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="private" name="waterOwnership" value="private">
+                        <label class="form-check-label" for="private">Private</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="publicWater" name="waterOwnership" value="public">
+                        <label class="form-check-label" for="publicWater">Public</label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="potabilityRemarks">Remarks: (Potability)</label>
+                    <textarea class="form-control" id="potabilityRemarks" rows="3"></textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="garbageDisposal">3.16 Method of Garbage Disposal</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="collected" name="garbageDisposal" value="collected">
+                        <label class="form-check-label" for="collected">Collected:</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="government" name="collectedBy" value="government">
+                            <label class="form-check-label" for="government">Government</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="private" name="collectedBy" value="private">
+                            <label class="form-check-label" for="private">Private</label>
+                        </div>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="burning" name="garbageDisposal" value="burning">
+                        <label class="form-check-label" for="burning">Burning</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="composting" name="garbageDisposal" value="composting">
+                        <label class="form-check-label" for="composting">Composting</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="segregation" name="garbageDisposal" value="segregation">
+                        <label class="form-check-label" for="segregation">Segregation</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="hogFeeding" name="garbageDisposal" value="hogFeeding">
+                        <label class="form-check-label" for="hogFeeding">Hog feeding</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="openDumping" name="garbageDisposal" value="openDumping">
+                        <label class="form-check-label" for="openDumping">Open Dumping</label>
+                    </div>
+                    <div class="form-group mt-4">
+                        <label for="otherGarbageDisposal">Others:</label>
+                        <input type="text" class="form-control" id="otherGarbageDisposal" placeholder="Enter other garbage disposal method">
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="animalRaised">3.17 Animal Raised</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="dog" name="animalRaised" value="dog">
+                        <label class="form-check-label" for="dog">Dog</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="cats" name="animalRaised" value="cats">
+                        <label class="form-check-label" for="cats">Cats</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="pigs" name="animalRaised" value="pigs">
+                        <label class="form-check-label" for="pigs">Pigs</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="chicken" name="animalRaised" value="chicken">
+                        <label class="form-check-label" for="chicken">Chicken</label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="animalLocation">3.18 Where the animal is kept? Describe</label>
+                    <textarea class="form-control" id="animalLocation" rows="3"></textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="animalImmunization">3.18 Immunization Status of Animal Raised</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="immunized" name="animalImmunization" value="immunized">
+                        <label class="form-check-label" for="immunized">Immunized</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="notImmunized" name="animalImmunization" value="notImmunized">
+                        <label class="form-check-label" for="notImmunized">Not Immunized</label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="backyardGardening">3.19 Backyard Gardening</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="herbalPlants" name="backyardGardening" value="herbalPlants">
+                        <label class="form-check-label" for="herbalPlants">Herbal plants</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="vegetables" name="backyardGardening" value="vegetables">
+                        <label class="form-check-label" for="vegetables">Vegetables</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="ornamental" name="backyardGardening" value="ornamental">
+                        <label class="form-check-label" for="ornamental">Ornamental</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fruitTrees" name="backyardGardening" value="fruitTrees">
+                        <label class="form-check-label" for="fruitTrees">Fruit trees</label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="neighborhoodType">3.20 Kind of Neighborhood</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="congested" name="neighborhoodType" value="congested">
+                        <label class="form-check-label" for="congested">Congested</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="slum" name="neighborhoodType" value="slum">
+                        <label class="form-check-label" for="slum">Slum</label>
+                    </div>
+                    <div class="form-group mt-4">
+                        <label for="sanitationDescription">Describe briefly the state of sanitation of immediate vicinity where the house is located</label>
+                        <textarea class="form-control" id="sanitationDescription" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="breedingSites">3.21 Presence of breeding sites of vectors of diseases describe:</label>
+                    <textarea class="form-control" id="breedingSites" rows="3"></textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="pollution">3.22 Sources of pollution</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="air" name="pollution" value="air">
+                        <label class="form-check-label" for="air">Air</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="water" name="pollution" value="water">
+                        <label class="form-check-label" for="water">Water</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="soil" name="pollution" value="soil">
+                        <label class="form-check-label" for="soil">Soil</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="noise" name="pollution" value="noise">
+                        <label class="form-check-label" for="noise">Noise</label>
+                    </div>
+                </div>
+
+
+                <h3 class="fw-bold mt-3">4. SOCIO-ECONOMIC AND CULTURAL VARIABLES</h3>
+                <h4 class="fw-bold mt-4">I. SOCIAL INDICATORS</h4>
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="language">1. Language or dialect spoken:</label>
+                    <input type="text" class="form-control" id="language" name="language">
+                </div>
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="literacy">2. Literacy (ability to read or write in language):</label>
+                    <input type="text" class="form-control" id="literacy" name="literacy">
+                </div>
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="social_network">3. Describe the degree of social network with friends, neighbors, and other relatives:</label>
+                    <textarea class="form-control" id="social_network" name="social_network"></textarea>
+                </div>
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="family_network">4. Describe the network of the family with religious organizations:</label>
+                    <textarea class="form-control" id="family_network" name="family_network"></textarea>
+                </div>
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="social_org_network">5. Describe network with social organizations:</label>
+                    <textarea class="form-control" id="social_org_network" name="social_org_network"></textarea>
+                </div>
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="educational_experiences">6. Describe the educational experiences:</label>
+                    <textarea class="form-control" id="educational_experiences" name="educational_experiences"></textarea>
+                </div>
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="work_history">7. Describe the work history:</label>
+                    <textarea class="form-control" id="work_history" name="work_history"></textarea>
+                </div>
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="leisure_interests">8. Leisure time interests:</label>
+                    <textarea class="form-control" id="leisure_interests" name="leisure_interests"></textarea>
+                </div>
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold">9. Source of Health Information:</label>
+                    <div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="tv" name="health_information" value="Television">
+                            <label class="form-check-label" for="tv">Television</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="mobile" name="health_information" value="Mobile phone">
+                            <label class="form-check-label" for="mobile">Mobile phone</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="radio" name="health_information" value="Radio">
+                            <label class="form-check-label" for="radio">Radio</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="poster" name="health_information" value="Poster">
+                            <label class="form-check-label" for="poster">Poster</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="health_workers" name="health_information" value="Health Workers">
+                            <label class="form-check-label" for="health_workers">Health Workers</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="newspaper" name="health_information" value="Newspaper">
+                            <label class="form-check-label" for="newspaper">Newspaper</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="others" name="health_information" value="Others">
+                            <label class="form-check-label" for="others">Others</label>
+                            <input type="text" class="form-control mt-2" id="other_health_information" name="other_health_information" placeholder="Specify other sources">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="transportation">10. Means of transportation:</label>
+                    <select class="form-control" id="transportation" name="transportation">
+                        <option value="Jeepney">Jeepney</option>
+                        <option value="Bus">Bus</option>
+                        <option value="Tricycle">Tricycle</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <input type="text" class="form-control mt-2" id="other_transportation" name="other_transportation" placeholder="Specify other means of transportation">
+                </div>
             </form>
         </div>
     </div>
