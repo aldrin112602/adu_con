@@ -1047,6 +1047,129 @@ require_once('config.php')
                 </div>
 
 
+                <h5 class="fw-bold mt-4">II. CULTURAL FACTORS and FAMILY HEALTH AND HEALTH BEHAVIOR</h5>
+
+                <div class="form-group mt-2">
+                    <label class="form-label fw-bold" for="family_spirituality">1. Describe the spirituality of the family:</label>
+                    <textarea class="form-control" id="family_spirituality" name="family_spirituality"></textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="rituals_celebrations">2. Rituals (holidays and celebrations):</label>
+                    <textarea class="form-control" id="rituals_celebrations" name="rituals_celebrations"></textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="dietary_habits">3. Dietary habits:</label>
+                    <textarea class="form-control" id="dietary_habits" name="dietary_habits"></textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold">4. Leadership styles of the officials:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="leadership_autocratic" name="leadership_style" value="Autocratic">
+                        <label class="form-check-label" for="leadership_autocratic">Autocratic</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="leadership_participative" name="leadership_style" value="Participative">
+                        <label class="form-check-label" for="leadership_participative">Participative</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="leadership_laissez_faire" name="leadership_style" value="Laissez Faire Leadership Style">
+                        <label class="form-check-label" for="leadership_laissez_faire">Laissez Faire Leadership Style</label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="health_beliefs">5. Health Beliefs pertaining to Childcare, Sickness, Pregnancy, Postpartum care, Newborn, Health and Illness:</label>
+                    <textarea class="form-control" id="health_beliefs" name="health_beliefs"></textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="health_concepts">6. Concepts of Health and Illness:</label>
+                    <textarea class="form-control" id="health_concepts" name="health_concepts"></textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="health_maintenance">7. Ways of Health Maintenance:</label>
+                    <textarea class="form-control" id="health_maintenance" name="health_maintenance"></textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="consultation_preference">8. Where do you consult when sick?</label>
+                    <div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="consultation_health_center" name="consultation_preference" value="Health center">
+                            <label class="form-check-label" for="consultation_health_center">Health center</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="consultation_hospital" name="consultation_preference" value="Hospital">
+                            <label class="form-check-label" for="consultation_hospital">Hospital</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="consultation_private_clinic" name="consultation_preference" value="Private Clinic">
+                            <label class="form-check-label" for="consultation_private_clinic">Private Clinic</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="consultation_faith_healer" name="consultation_preference" value="Traditional Faith healer">
+                            <label class="form-check-label" for="consultation_faith_healer">Traditional Faith healer</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="social_issues_conditions">9. Conditions that cause social issues/conflicts:</label>
+                    <textarea class="form-control" id="social_issues_conditions" name="social_issues_conditions"></textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="effective_practices">10. Practices/approaches that are effective in settling issues and concerns within the community:</label>
+                    <textarea class="form-control" id="effective_practices" name="effective_practices"></textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="vices">11. Vices:</label>
+                    <div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="smoking" name="vices" value="Smoking">
+                            <label class="form-check-label" for="smoking">Smoking</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="drinking" name="vices" value="Drinking">
+                            <label class="form-check-label" for="drinking">Drinking</label>
+                        </div>
+                    </div>
+                    <label class="form-label fw-bold" for="vices_description">Describe the reasons, years of exposure and history of quitting:</label>
+                    <textarea class="form-control" id="vices_description" name="vices_description"></textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="daily_activities">12. Activities of daily living (how family spends a typical day):</label>
+                    <textarea class="form-control" id="daily_activities" name="daily_activities"></textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="health_history">13. Health history (pregnancy, illness, death within the past 5 years/reasons, causes of death and illness):</label>
+                    <textarea class="form-control" id="health_history" name="health_history"></textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="health_status">14. Health status (problems and priorities):</label>
+                    <textarea class="form-control" id="health_status" name="health_status"></textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label fw-bold" for="home_remedies">15. Describe home remedies during sickness:</label>
+                    <textarea class="form-control" id="home_remedies" name="home_remedies"></textarea>
+                </div>
+
+
+
+
+                
+
+
+
 
 
 
