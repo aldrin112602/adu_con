@@ -1165,8 +1165,282 @@ require_once('config.php')
 
 
 
+                <div class="form-group mt-4">
+                    <label class="fw-bold form-label">III. OTHER INFORMATION RELATED TO FAMILY HEALTH</label>
+                    <div>
+                        <label class="fw-bold form-label">A. MATERNAL AND CHILD HEALTH (FOR PREGNANT ONLY, LEAVE THIS PART IF FAMILY HAS NO PREGNANT MEMBER)</label>
+                        <div class="form-group mt-4">
+                            <label class="fw-bold form-label">1. PNCU</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="pncu_positive" name="pncu_status" value="Positive">
+                                <label class="form-check-label" for="pncu_positive">Positive PNCU</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="pncu_negative" name="pncu_status" value="Negative">
+                                <label class="form-check-label" for="pncu_negative">Negative PNCU</label>
+                            </div>
+                            <div class="form-group mt-4">
+                                <label class="fw-bold form-label">Where:</label>
+                                <input type="text" class="form-control" id="pncu_location" name="pncu_location">
+                            </div>
+                        </div>
 
-                
+                        <div class="form-group mt-4">
+                            <label class="fw-bold form-label" for="reason_negative_pncu">2. Reason for (-)PNCU:</label>
+                            <textarea class="form-control" id="reason_negative_pncu" name="reason_negative_pncu"></textarea>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <label class="fw-bold form-label" for="children_born">3. No. of Children born exactly 9 mos.:</label>
+                            <input type="text" class="form-control" id="children_born" name="children_born">
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <label class="fw-bold form-label">Immunization for TT</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="tt_immunization_positive" name="tt_immunization" value="Positive">
+                                <label class="form-check-label" for="tt_immunization_positive">Positive</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="tt_immunization_negative" name="tt_immunization" value="Negative">
+                                <label class="form-check-label" for="tt_immunization_negative">Negative</label>
+                            </div>
+                            <div class="form-group mt-4">
+                                <label class="fw-bold form-label">No. of doses received:</label>
+                                <input type="text" class="form-control" id="tt_doses_received" name="tt_doses_received">
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <label class="fw-bold form-label">4. Plan where to deliver</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="deliver_health_center" name="delivery_place" value="Health center">
+                                <label class="form-check-label" for="deliver_health_center">Health center</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="deliver_home" name="delivery_place" value="Home">
+                                <label class="form-check-label" for="deliver_home">Home</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="deliver_hospital" name="delivery_place" value="Hospital">
+                                <label class="form-check-label" for="deliver_hospital">Hospital</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="deliver_lying_in" name="delivery_place" value="Lying -in">
+                                <label class="form-check-label" for="deliver_lying_in">Lying -in</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <label class="fw-bold form-label">5. Who assisted previous deliveries</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="previous_delivery_nurse" name="delivery_assistance" value="Nurse">
+                                <label class="form-check-label" for="previous_delivery_nurse">Nurse</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="previous_delivery_midwife" name="delivery_assistance" value="Midwife">
+                                <label class="form-check-label" for="previous_delivery_midwife">Midwife</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="previous_delivery_hilot" name="delivery_assistance" value="Hilot">
+                                <label class="form-check-label" for="previous_delivery_hilot">Hilot</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="previous_delivery_doctor" name="delivery_assistance" value="Doctor">
+                                <label class="form-check-label" for="previous_delivery_doctor">Doctor</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <label class="fw-bold form-label" for="pregnancy_complications">6. Any history of pregnancy complications?</label>
+                            <textarea class="form-control" id="pregnancy_complications" name="pregnancy_complications"></textarea>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <label class="fw-bold form-label" for="child_care_beliefs">7. Myths and beliefs about child care</label>
+                            <textarea class="form-control" id="child_care_beliefs" name="child_care_beliefs"></textarea>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <label class="fw-bold form-label">8. For children 0-2 years old ONLY</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="infant_feeding_breastfeeding" name="infant_feeding" value="Breast feeding">
+                                <label class="form-check-label" for="infant_feeding_breastfeeding">Breast feeding</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="infant_feeding_mixed" name="infant_feeding" value="Mixed feeding">
+                                <label class="form-check-label" for="infant_feeding_mixed">Mixed feeding</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="
+
+form-check-input" type="checkbox" id="infant_feeding_bottle" name="infant_feeding" value="Bottle feeding">
+                                <label class="form-check-label" for="infant_feeding_bottle">Bottle feeding</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <label class="fw-bold form-label">8.1 Type of Milk Formula</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="milk_formula_condensed" name="milk_formula" value="Condensed">
+                                <label class="form-check-label" for="milk_formula_condensed">Condensed</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="milk_formula_evaporated" name="milk_formula" value="Evaporated">
+                                <label class="form-check-label" for="milk_formula_evaporated">Evaporated</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="milk_formula_powdered" name="milk_formula" value="Powdered">
+                                <label class="form-check-label" for="milk_formula_powdered">Powdered</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <label class="fw-bold form-label" for="food_supplement_babies">8.3 Food supplement given to babies</label>
+                            <textarea class="form-control" id="food_supplement_babies" name="food_supplement_babies"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <label class="fw-bold mt-4">9. Immunization Status of 0-12 months only (leave if family has no 0-12 mos. Old member)</label>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>BCG</th>
+                            <th>Hepatitis B Vaccine 1-3</th>
+                            <th>OPV</th>
+                            <th>DPT</th>
+                            <th>Attenuated Measles Vaccine (AMV)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="form-group mt-4">
+                                    <label for="bcg_date">Date:</label>
+                                    <input type="date" class="form-control" id="bcg_date" name="bcg_date">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group mt-4">
+                                    <label for="hepB1Date">Hep B 1 Date:</label>
+                                    <input type="date" class="form-control" id="hepB1Date" name="hepB1Date">
+                                </div>
+                                <div class="form-group mt-4">
+                                    <label for="hepB2Date">Hep B 2 Date:</label>
+                                    <input type="date" class="form-control" id="hepB2Date" name="hepB2Date">
+                                </div>
+                                <div class="form-group mt-4">
+                                    <label for="hepB3Date">Hep B 3 Date:</label>
+                                    <input type="date" class="form-control" id="hepB3Date" name="hepB3Date">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group mt-4">
+                                    <label for="opv1Date">OPV 1 Date:</label>
+                                    <input type="date" class="form-control" id="opv1Date" name="opv1Date">
+                                </div>
+                                <div class="form-group mt-4">
+                                    <label for="opv2Date">OPV 2 Date:</label>
+                                    <input type="date" class="form-control" id="opv2Date" name="opv2Date">
+                                </div>
+                                <div class="form-group mt-4">
+                                    <label for="opv3Date">OPV 3 Date:</label>
+                                    <input type="date" class="form-control" id="opv3Date" name="opv3Date">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group mt-4">
+                                    <label for="dpt1Date">DPT 1 Date:</label>
+                                    <input type="date" class="form-control" id="dpt1Date" name="dpt1Date">
+                                </div>
+                                <div class="form-group mt-4">
+                                    <label for="dpt2Date">DPT 2 Date:</label>
+                                    <input type="date" class="form-control" id="dpt2Date" name="dpt2Date">
+                                </div>
+                                <div class="form-group mt-4">
+                                    <label for="dpt3Date">DPT 3 Date:</label>
+                                    <input type="date" class="form-control" id="dpt3Date" name="dpt3Date">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group mt-4">
+                                    <label for="amv1Date">AMV 1 Date:</label>
+                                    <input type="date" class="form-control" id="amv1Date" name="amv1Date">
+                                </div>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <h4 class="fw-bold mt-4">B.FAMILY PLANNING (REPRODUCTIVE AGE GROUP ONLY)</h4>
+
+
+                <div class="form-group mt-2">
+                    <label class="fw-bold form-label" for="family_planning_acceptance">1. Acceptors</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="family_planning_acceptance" id="acceptors" value="acceptors">
+                        <label class="form-check-label" for="acceptors">Acceptors</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="family_planning_acceptance" id="non_acceptors" value="non_acceptors">
+                        <label class="form-check-label" for="non_acceptors">Non acceptors</label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="fw-bold form-label">2. Methods of Family Planning</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fp_pills" name="family_planning_methods" value="Pills">
+                        <label class="form-check-label" for="fp_pills">Pills</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fp_withdrawal" name="family_planning_methods" value="Withdrawal">
+                        <label class="form-check-label" for="fp_withdrawal">Withdrawal</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fp_rhythm" name="family_planning_methods" value="Rhythm">
+                        <label class="form-check-label" for="fp_rhythm">Rhythm</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fp_condom" name="family_planning_methods" value="Condom">
+                        <label class="form-check-label" for="fp_condom">Condom</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fp_iud" name="family_planning_methods" value="IUD">
+                        <label class="form-check-label" for="fp_iud">IUD</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fp_btl" name="family_planning_methods" value="BTL">
+                        <label class="form-check-label" for="fp_btl">BTL</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fp_vasectomy" name="family_planning_methods" value="Vasectomy">
+                        <label class="form-check-label" for="fp_vasectomy">Vasectomy</label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="fw-bold form-label" for="reason_family_planning">3. Reason for family planning:</label>
+                    <input type="text" class="form-control" id="reason_family_planning" name="reason_family_planning">
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="fw-bold form-label" for="reason_non_acceptors">4. Reason for non-acceptors:</label>
+                    <input type="text" class="form-control" id="reason_non_acceptors" name="reason_non_acceptors">
+                </div>
+
+
+
+
+
+
+
+
 
 
 
