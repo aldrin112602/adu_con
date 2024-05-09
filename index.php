@@ -65,32 +65,32 @@ require_once('handle_submit_form.php');
                 <div class="form-group row mt-4">
                     <div class="col-md-4">
                         <label class="form-label fw-bold" for="familySurname">Family Surname:</label>
-                        <input type="text" class="form-control" id="familySurname" placeholder="Enter Family Surname">
+                        <input type="text" class="form-control" name="familySurname" id="familySurname" placeholder="Enter Family Surname">
                     </div>
                     <div class="col-md-4">
                         <label class="form-label fw-bold" for="houseNumber">House #:</label>
-                        <input type="text" class="form-control" id="houseNumber" placeholder="Enter House Number">
+                        <input type="text" class="form-control" name="houseNumber" id="houseNumber" placeholder="Enter House Number">
                     </div>
                     <div class="col-md-4">
                         <label class="form-label fw-bold" for="purokBarangay">Purok/Barangay:</label>
-                        <input type="text" class="form-control" id="purokBarangay" placeholder="Enter Purok/Barangay">
+                        <input type="text" class="form-control" name="purokBarangay" id="purokBarangay" placeholder="Enter Purok/Barangay">
                     </div>
                 </div>
                 <div class="form-group row mt-4">
                     <div class="col-md-6">
                         <label class="form-label fw-bold" for="religion">Religion:</label>
-                        <input type="text" class="form-control" id="religion" placeholder="Enter Religion">
+                        <input type="text" class="form-control" name="religion" id="religion" placeholder="Enter Religion">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label fw-bold" for="placeOfOrigin">Place of Origin:</label>
-                        <input type="text" class="form-control" id="placeOfOrigin" placeholder="Enter Place of Origin">
+                        <input type="text" class="form-control" name="placeOfOrigin" id="placeOfOrigin" placeholder="Enter Place of Origin">
                     </div>
                 </div>
                 <div class="form-group row mt-4">
                     <div class="col-md-6">
                         <label class="form-label fw-bold" for="lengthOfResidency">Length of Residency:</label>
                         <div class="input-group">
-                            <input type="number" class="form-control" id="lengthOfResidency" placeholder="Enter Length">
+                            <input type="number" class="form-control" id="lengthOfResidency" name="lengthOfResidency" placeholder="Enter Length">
                             <div class="input-group-append">
                                 <span class="input-group-text">mos./years</span>
                             </div>
@@ -98,7 +98,7 @@ require_once('handle_submit_form.php');
                     </div>
                     <div class="col-md-6">
                         <label class="form-label fw-bold" for="numberOfFamilyMembers">Number of family members:</label>
-                        <input type="number" class="form-control" id="numberOfFamilyMembers" placeholder="Enter Number of Family Members">
+                        <input type="number" class="form-control" name="numberOfFamilyMembers" id="numberOfFamilyMembers" placeholder="Enter Number of Family Members">
                     </div>
                 </div>
                 <h5 class="mt-4 fw-bold">A. FAMILY DATA</h5>
@@ -143,58 +143,60 @@ require_once('handle_submit_form.php');
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">2.1 Family Structure</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="nuclear">
+                        <input class="form-check-input" type="checkbox" id="nuclear" name="family_structure">
                         <label class="form-check-label" for="nuclear">Nuclear</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="twocareer">
+                        <input class="form-check-input" type="checkbox" id="twocareer" name="family_structure">
                         <label class="form-check-label" for="twocareer">Two-career</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="singleParent">
+                        <input class="form-check-input" type="checkbox" id="singleParent" name="family_structure">
                         <label class="form-check-label" for="singleParent">Single Parent</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="adolescentFamily">
+                        <input class="form-check-input" type="checkbox" id="adolescentFamily" name="family_structure">
                         <label class="form-check-label" for="adolescentFamily">Adolescent family</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="blended">
+                        <input class="form-check-input" type="checkbox" id="blended" name="family_structure">
                         <label class="form-check-label" for="blended">Blended</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="cohabitating">
+                        <input class="form-check-input" type="checkbox" id="cohabitating" name="family_structure">
                         <label class="form-check-label" for="cohabitating">Cohabitating</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gayLesbian">
+                        <input class="form-check-input" type="checkbox" id="gayLesbian" name="family_structure">
                         <label class="form-check-label" for="gayLesbian">Gay and Lesbian</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="extended">
+                        <input class="form-check-input" type="checkbox" id="extended" name="family_structure">
                         <label class="form-check-label" for="extended">Extended</label>
                     </div>
                 </div>
 
+
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">2.2 Base on Authority</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="patriarchal">
+                        <input class="form-check-input" type="checkbox" id="patriarchal" name="authority_structure">
                         <label class="form-check-label" for="patriarchal">Patriarchal</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="matriarchal">
+                        <input class="form-check-input" type="checkbox" id="matriarchal" name="authority_structure">
                         <label class="form-check-label" for="matriarchal">Matriarchal</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="egalitarian">
+                        <input class="form-check-input" type="checkbox" id="egalitarian" name="authority_structure">
                         <label class="form-check-label" for="egalitarian">Egalitarian</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="autocratic">
+                        <input class="form-check-input" type="checkbox" id="autocratic" name="authority_structure">
                         <label class="form-check-label" for="autocratic">Autocratic</label>
                     </div>
                 </div>
+
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">2.3 Stages of Family Relationships</label>
@@ -251,7 +253,7 @@ require_once('handle_submit_form.php');
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="howDecisionsAreMade">2.5 How decisions are made</label>
-                    <textarea class="form-control" id="howDecisionsAreMade" rows="3"></textarea>
+                    <textarea class="form-control" name="howDecisionsAreMade" id="howDecisionsAreMade" rows="3"></textarea>
                 </div>
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">2.6 General Family Relationships/Dynamics</label>
@@ -273,34 +275,35 @@ require_once('handle_submit_form.php');
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="significantOthers">2.7 Significant others (Indicate roles
                         they play in the family's life)</label>
-                    <textarea class="form-control" id="significantOthers" rows="3"></textarea>
+                    <textarea class="form-control" name="significantOthers" id="significantOthers" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="relationshipToLargerCommunity">2.8 Relationship of the family
                         to the larger Community (Describe the nature and extent of participation)</label>
-                    <textarea class="form-control" id="relationshipToLargerCommunity" rows="3"></textarea>
+                    <textarea class="form-control" name="relationshipToLargerCommunity" id="relationshipToLargerCommunity" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">2.8.1 Activities Attended:</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="barangayAssembly">
+                        <input class="form-check-input" type="checkbox" id="barangayAssembly" name="activities_attended">
                         <label class="form-check-label" for="barangayAssembly">Barangay Assembly</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="cleanupDrives">
+                        <input class="form-check-input" type="checkbox" id="cleanupDrives" name="activities_attended">
                         <label class="form-check-label" for="cleanupDrives">Clean-up Drives</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="healthTeachings">
+                        <input class="form-check-input" type="checkbox" id="healthTeachings" name="activities_attended">
                         <label class="form-check-label" for="healthTeachings">Health Teachings</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="seminars">
+                        <input class="form-check-input" type="checkbox" id="seminars" name="activities_attended">
                         <label class="form-check-label" for="seminars">Seminars</label>
                     </div>
                 </div>
+
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold">2.8.2 Extent of Participation</label>
@@ -329,27 +332,27 @@ require_once('handle_submit_form.php');
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="bondingOfFamilyMembers">2.9 Describe the bonding of the
                         family members</label>
-                    <textarea class="form-control" id="bondingOfFamilyMembers" rows="3"></textarea>
+                    <textarea class="form-control" name="bondingOfFamilyMembers" id="bondingOfFamilyMembers" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="howMembersCommunicate">2.10 How members communicate</label>
-                    <textarea class="form-control" id="howMembersCommunicate" rows="3"></textarea>
+                    <textarea class="form-control" name="howMembersCommunicate" id="howMembersCommunicate" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="howProblemsAreSolved">2.11 How problems are solved</label>
-                    <textarea class="form-control" id="howProblemsAreSolved" rows="3"></textarea>
+                    <textarea class="form-control" name="howProblemsAreSolved" id="howProblemsAreSolved" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="howConflictIsHandled">2.12 How conflict is handled</label>
-                    <textarea class="form-control" id="howConflictIsHandled" rows="3"></textarea>
+                    <textarea class="form-control" name="howConflictIsHandled" id="howConflictIsHandled" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="divisionOfLabor">2.13 Division of labor</label>
-                    <textarea class="form-control" id="divisionOfLabor" rows="3"></textarea>
+                    <textarea class="form-control" name="divisionOfLabor" id="divisionOfLabor" rows="3"></textarea>
                 </div>
 
 
@@ -494,7 +497,7 @@ require_once('handle_submit_form.php');
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="sleepingArrangement">Remarks: (Describe the Family's Sleeping
                         Arrangement)</label>
-                    <textarea class="form-control" id="sleepingArrangement" rows="3"></textarea>
+                    <textarea class="form-control" name="sleepingArrangement" id="sleepingArrangement" rows="3"></textarea>
                 </div>
 
 
@@ -633,7 +636,7 @@ require_once('handle_submit_form.php');
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="sanitaryCondition">3.14 Sanitary Condition: Describe briefly
                         the cleanliness of the toilet</label>
-                    <textarea class="form-control" id="sanitaryCondition" rows="3"></textarea>
+                    <textarea class="form-control" name="sanitaryCondition" id="sanitaryCondition" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
@@ -666,7 +669,7 @@ require_once('handle_submit_form.php');
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="potabilityRemarks">Remarks: (Potability)</label>
-                    <textarea class="form-control" id="potabilityRemarks" rows="3"></textarea>
+                    <textarea class="form-control" name="potabilityRemarks" id="potabilityRemarks" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
@@ -732,7 +735,7 @@ require_once('handle_submit_form.php');
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="animalLocation">3.18 Where the animal is kept?
                         Describe</label>
-                    <textarea class="form-control" id="animalLocation" rows="3"></textarea>
+                    <textarea class="form-control" name="animalLocation" id="animalLocation" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
@@ -781,14 +784,14 @@ require_once('handle_submit_form.php');
                     <div class="form-group mt-4">
                         <label for="sanitationDescription">Describe briefly the state of sanitation of immediate
                             vicinity where the house is located</label>
-                        <textarea class="form-control" id="sanitationDescription" rows="3"></textarea>
+                        <textarea class="form-control" name="sanitationDescription" id="sanitationDescription" rows="3"></textarea>
                     </div>
                 </div>
 
                 <div class="form-group mt-4">
                     <label class="form-label fw-bold" for="breedingSites">3.21 Presence of breeding sites of vectors of
                         diseases describe:</label>
-                    <textarea class="form-control" id="breedingSites" rows="3"></textarea>
+                    <textarea class="form-control" name="breedingSites" id="breedingSites" rows="3"></textarea>
                 </div>
 
                 <div class="form-group mt-4">
@@ -1594,8 +1597,6 @@ form-check-input" type="checkbox" id="infant_feeding_bottle" name="infant_feedin
             }
             ?>
         })
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
 </body>
 

@@ -1,5 +1,6 @@
 <?php
-require_once('config.php')
+require_once('config.php');
+require_once('global.php');
 
 ?>
 
@@ -29,7 +30,7 @@ require_once('config.php')
                     </a>
                 </li>
                 <li>
-                    <a href="families.php"  class="nav-link text-white">
+                    <a href="families.php" class="nav-link text-white">
                         Families
                     </a>
                 </li>
@@ -55,7 +56,44 @@ require_once('config.php')
                 </ul>
             </div>
         </div>
-        <div style="width: auto;" class="p-5">
+        <div style="width: auto; max-height: 100vh; overflow-y: auto;" class="p-5">
+            <h3>Answers</h3>
+            <?php
+            $id = $_GET['id'] ?? 0;
+            $row = getRows("id='$id'", "form_records");
+            if (count($row) == 0) {
+                header("location: families.php");
+            }
+
+            foreach ($row as $key => $value) {
+                foreach ($value as $innerKey => $innerValue) {
+                    if(($innerKey != 'id') && ($innerKey != 'date')) {
+                        echo "<h5>". $innerKey. "</h5>";
+                        if(is_array($innerValue)) {
+                            echo "<ul>";
+                            foreach($innerValue as $v) {
+                                echo "<li>". $v. "</li>";
+                            }
+                            echo "</ul>";
+                        } else {
+                            echo "<p>". $innerValue. "</p>";
+                        }
+                    }
+                }
+                // echo "<h3>". $key. "</h3>";
+                // if(is_array($value)) {
+                //     echo "<ul>";
+                //     foreach($value as $v) {
+                //         echo "<li>". $v. "</li>";
+                //     }
+                //     echo "</ul>";
+                // } else {
+                //     echo "<p>". $value. "</p>";
+                // }
+            }
+           
+            ?>
+
 
         </div>
     </div>
